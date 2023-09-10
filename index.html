@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Rental Website</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Include jQuery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header contains several hypertexts to navigate through the website-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Hypertext at top left, clicking it will [if at index.html] refresh the page or [if at other] go back to index.html -->
+            <div class="ms-4">
+                <a class="navbar-brand" href="index.html">Book Rental Library</a>
+            </div>
+            <!-- Switch to dropdown button when small screen is detected-->
+            <div class="me-4">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <!-- Hypertexts at top right, they can be clicked to go to different page -->
+            <div class="collapse navbar-collapse me-4" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Rentals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container mt-5">
+            <h1>Welcome to the Book Rental Library</h1>
+            <p class="lead">Rent books from our vast collection and enjoy reading.</p>
+            <!-- Search bar -->
+            <form class="form-inline">
+                <div class="form-group row">
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="Search books...">
+                    </div>
+                    <div class="col-sm-4">
+                        <button class="btn btn-outline-secondary" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section class="container mt-5">
+            <h2>Featured Books</h2>
+            <div class="row">
+                <!-- Display featured books here -->
+                <!-- Example book card -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="book1.jpg" class="card-img-top" alt="Book 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Author: Author Name</p>
+                            <a href="#" class="btn btn-primary">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="book2.jpg" class="card-img-top" alt="Book 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Author: Author Name</p>
+                            <a href="#" class="btn btn-primary">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="book3.jpg" class="card-img-top" alt="Book 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Author: Author Name</p>
+                            <a href="#" class="btn btn-primary">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-4">
+            <p>&copy; 2023 Book Rental Library</p>
+        </div>
+    </footer>
+</body>
+</html>

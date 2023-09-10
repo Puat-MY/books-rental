@@ -1,0 +1,19 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+}
+
+header {
+    min-height: 50px;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    min-height: 50px;
+    margin-top: auto;
+}
