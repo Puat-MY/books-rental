@@ -46,7 +46,7 @@ footer {
     margin: 0 10px; /* Adjust as needed to control spacing between cards */
 }
 
-.cardc {
+.card {
     width: 200px;
     height: 278px;
     perspective: 1000px;
