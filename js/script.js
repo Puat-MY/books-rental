@@ -176,6 +176,20 @@ function printRentedBooks() {
     }
 }
 
+//Written by Phua
+//contact.html
+// Handle form submission
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the form from submitting normally
+
+    // You can add code here to send the form data to your server or perform other actions
+    // For now, let's just show a confirmation message
+    alert('Thank you for your message! We will get back to you soon.');
+
+    // Clear the form fields
+    this.reset();
+});
+
 function returnBook(event) {
     event.preventDefault();
     var outputTable = document.getElementById("historyTable");
