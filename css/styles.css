@@ -37,6 +37,7 @@ footer {
 
 .card-parent {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between; /* Adjust as needed to control spacing */
 }
 
