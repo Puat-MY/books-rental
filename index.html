@@ -6,12 +6,16 @@
     <title>Book Rental Website</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        sessionStorage.setItem("search", "");
+    </script>
     <!-- Include jQuery -->
     <script src="js/jquery-3.7.1.min.js"></script>
     <!-- Include Bootstrap JS -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Include custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- Header contains several hypertexts to navigate through the website-->
@@ -30,14 +34,14 @@
             <!-- Hypertexts at top right, they can be clicked to go to different page -->
             <div class="collapse navbar-collapse me-4" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a> <!-- "Home" link in the middle -->
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="browse.html">Browse Books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="myrentals.html">My Rentals</a>
+                        <a class="nav-link" href="rentedbooks.html">Rented Books</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
@@ -52,7 +56,7 @@
             <h1>Welcome to the Book Rental Library</h1>
             <p class="lead">Rent books from our vast collection and enjoy reading.</p>
             <!-- Search bar -->
-            <form class="form-inline" id="searchBooks">
+            <form class="form-inline" id="searchBar">
                 <div class="form-group row">
                     <div class="col-sm-8">
                         <input type="text" class="form-control" placeholder="Search books..." id = "searchInput">
@@ -70,31 +74,106 @@
                 <!-- Example book card -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card">
-                        <img src="book1.jpg" class="card-img-top" alt="Book 1">
+                        <img src="img/book1.jpg" class="card-img-top book-height" alt="Book 1">
                         <div class="card-body">
-                            <h5 class="card-title">Book Title</h5>
-                            <p class="card-text">Author: Author Name</p>
+                            <h5 class="card-title">Harry Potter and the Deathly Hallows</h5>
+                            <p class="card-text">J.K. Rowling</p>
                             <a href="#" class="btn btn-primary rent-now-link">Rent Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card">
-                        <img src="book2.jpg" class="card-img-top" alt="Book 2">
+                        <img src="img/book2.jpg" class="card-img-top book-height" alt="Book 2">
                         <div class="card-body">
-                            <h5 class="card-title">Book Title</h5>
-                            <p class="card-text">Author: Author Name</p>
+                            <h5 class="card-title">The Imperfections of Memory</h5>
+                            <p class="card-text">Angelina Aludo</p>
                             <a href="#" class="btn btn-primary rent-now-link">Rent Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card">
-                        <img src="book3.jpg" class="card-img-top" alt="Book 3">
+                        <img src="img/book3.jpg" class="card-img-top book-height" alt="Book 3">
                         <div class="card-body">
-                            <h5 class="card-title">Book Title</h5>
-                            <p class="card-text">Author: Author Name</p>
+                            <h5 class="card-title">The Dreaming Arts</h5>
+                            <p class="card-text">Tom Maloney</p>
                             <a href="#" class="btn btn-primary rent-now-link">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container mt-5">
+            <h2>Trending Now</h2>
+            <div class="row">
+                <!-- Display featured books here -->
+                <!-- Example book card -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="img/book4.jpg" class="card-img-top book-height" alt="Book 4">
+                        <div class="card-body">
+                            <h5 class="card-title">A Million To One</h5>
+                            <p class="card-text">Tony Faggioli</p>
+                            <a href="#" class="btn btn-primary rent-now-link">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="img/book5.jpg" class="card-img-top book-height" alt="Book 5">
+                        <div class="card-body">
+                            <h5 class="card-title">The Light Beyound the Garden Wall</h5>
+                            <p class="card-text">Scott Whitehead</p>
+                            <a href="#" class="btn btn-primary rent-now-link">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="img/book6.jpg" class="card-img-top book-height" alt="Book 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Harry Potter and the Cursed Child (One and Two)</h5>
+                            <p class="card-text">John Tiffany & Jack Throne</p>
+                            <a href="#" class="btn btn-primary rent-now-link">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container mt-5">
+            <h2>New Releases</h2>
+            <div class="row">
+                <!-- Display featured books here -->
+                <!-- Example book card -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="img/book7.jpg" class="card-img-top book-height" alt="Book 7">
+                        <div class="card-body">
+                            <h5 class="card-title">The Way of the Nameless: Series One</h5>
+                            <p class="card-text">Graham Douglass</p>
+                            <a href="#" class="btn btn-primary rent-now-link">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="img/book8.jpg" class="card-img-top book-height" alt="Book 8">
+                        <div class="card-body">
+                            <h5 class="card-title">Sorrow and Bliss</h5>
+                            <p class="card-text">Meg Mason</p>
+                            <a href="#" class="btn btn-primary rent-now-link">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="img/book9.jpg" class="card-img-top book-height" alt="Book 9">
+                        <div class="card-body">
+                            <h5 class="card-title">Abandoned Kingdom</h5>
+                            <p class="card-text">Claudia Wilson</p>
+                            <a href="#" class="btn btn-primary rent-now-link">Rent Now</a>
+                            <a href="#" class="btn btn-primary">Preview</a>
                         </div>
                     </div>
                 </div>
@@ -104,7 +183,17 @@
 
     <footer class="bg-dark text-light mt-5">
         <div class="container py-4">
-            <p>&copy; 2023 Book Rental Library</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Books Rental Library | Query results are from <a href="https://openlibrary.org/">OpenLibrary</a></p>
+                </div>
+                <div class="col-md-6 text-md-end"> <!-- Align content to the right -->
+                    <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-3x"></i></a>
+                    <a href="#" class="text-light me-3"><i class="fab fa-twitter fa-3x"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-instagram fa-3x"></i></a>
+                    <!-- Add more social icons as needed -->
+                </div>
+            </div>
         </div>
     </footer>
 

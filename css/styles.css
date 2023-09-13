@@ -2,11 +2,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url('../img/bg.jpg'); /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
-    background-size: cover; /* This ensures the image covers the entire viewport */
-    background-repeat: no-repeat; /* Prevents image from repeating */
-    background-attachment: fixed; /* Fixed background for scrolling content */
-    background-position: center center; /* Center the background image */
+    background-color: aliceblue;
 }
 
 header {
@@ -20,4 +16,21 @@ main {
 footer {
     min-height: 50px;
     margin-top: auto;
+}
+
+.book-height {
+    height: 600px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: opacity 0.3s ease-in-out;
 }
