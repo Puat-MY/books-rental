@@ -50,7 +50,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="signin-nav">
                         <a class="nav-link" href="signin.html"> Sign In</a>
                     </li>
                 </ul>
@@ -144,16 +144,21 @@
             { email: 'user1@example.com', password: 'password1' },
             { email: 'user2@example.com', password: 'password2' }
         ];
-    
+
         // Function to perform login
         function performLogin() {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-    
+
             // Check if the provided email and password match a user
             const user = users.find(u => u.email === email && u.password === password);
-    
+
             if (user) {
+                // Set the loggedIn variable to true (you would use a proper authentication mechanism in a real app)
+                loggedIn = true;
+                // Store the user's email in local storage
+                localStorage.setItem('userEmail', email);
+
                 // Redirect to the main page or perform other actions upon successful login
                 window.location.href = 'index.html';
             } else {
@@ -161,7 +166,7 @@
                 document.getElementById('login-error').textContent = 'Invalid email or password';
             }
         }
-    
+
         // Add a click event listener to the login button
         document.getElementById('custom-login-btn').addEventListener('click', performLogin);
     </script>
