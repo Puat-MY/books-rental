@@ -44,7 +44,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="signin-nav">
                         <a class="nav-link" href="signin.html"> Sign In</a>
                     </li>
                 </ul>
@@ -90,5 +90,23 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Function to update the navigation bar based on login status
+        function updateNavigation() {
+            const signinNav = document.getElementById('signin-nav');
+            const userEmail = localStorage.getItem('userEmail');
+
+            if (userEmail) {
+                // Replace "Sign In" with the user's email
+                signinNav.innerHTML = `<a class="nav-link">${userEmail}</a>`;
+            } else {
+                // If not logged in, show "Sign In" link
+                signinNav.innerHTML = `<a class="nav-link" href="signin.html">Sign In</a>`;
+            }
+        }
+
+        // Call the updateNavigation function to initialize the navigation
+        updateNavigation();
+    </script>
 </body>
 </html>
