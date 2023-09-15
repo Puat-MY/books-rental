@@ -64,7 +64,7 @@
                 <div class="custom-image-wrapper">
                     <img src="img/Book bg.webp" alt="">
                 </div>
-        
+
                 <div class="custom-content-container">
                     <h1 class="custom-section-heading"> Empowering Minds Through
                         <span>Digital Books.</span>
@@ -74,7 +74,7 @@
                     </p>
                 </div>
             </div>
-        
+
             <div class="custom-form-section">
                 <div class="custom-form-wrapper">
                     <div class="custom-logo-container">
@@ -82,7 +82,7 @@
                             <img src="img/Utar.png" alt="Logo">
                         </a>
                     </div>
-        
+
                     <h2>Welcome Back</h2>
                     <p>Enter your credentials to access your account</p>
                     <div class="custom-input-container">
@@ -95,27 +95,28 @@
                             <input type="password" id="password" autocomplete="off">
                         </div>
                     </div>
-        
+
                     <div class="custom-remember-forgot">
                         <div class="custom-remember-me">
                             <input type="checkbox" value="remember-me" id="remember-me">
                             <label for="remember-me">Remember me</label>
                         </div>
-        
+
                         <a href="#">Forgot password?</a>
                     </div>
-        
-                    <button class="custom-login-btn">Log In</button>
-        
+
+                    <button class="custom-login-btn" id="custom-login-btn">Log In</button>
+                    <p id="login-error" style="color: red;"></p>
+
                     <div class="custom-or-divider">or</div>
-        
+
                     <button class="custom-google-signin">
                         <object data="./google.svg"></object>
                         <span>Sign in with Google</span>
                     </button>
                 </div>
             </div>
-        </section>        
+        </section>
     </main>
 
     <footer class="bg-dark text-light mt-5">
@@ -137,26 +138,33 @@
             </div>
         </div>
     </footer>
-
-    <script src="js/script.js">const users = [
-            { username: 'user1', password: 'password1' },
-            { username: 'user2', password: 'password2' }
+    <script>
+        // Dummy user data (replace with your actual user data)
+        const users = [
+            { email: 'user1@example.com', password: 'password1' },
+            { email: 'user2@example.com', password: 'password2' }
         ];
-
-        document.getElementById('login-button').addEventListener('click', function () {
-            const username = document.getElementById('username').value;
+    
+        // Function to perform login
+        function performLogin() {
+            const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-
-            // Simulated authentication (replace with your authentication logic)
-            const user = users.find(u => u.username === username && u.password === password);
-
+    
+            // Check if the provided email and password match a user
+            const user = users.find(u => u.email === email && u.password === password);
+    
             if (user) {
                 // Redirect to the main page or perform other actions upon successful login
                 window.location.href = 'index.html';
             } else {
-                document.getElementById('login-error').textContent = 'Invalid username or password';
+                // Display an error message if login fails
+                document.getElementById('login-error').textContent = 'Invalid email or password';
             }
-        });</script>
+        }
+    
+        // Add a click event listener to the login button
+        document.getElementById('custom-login-btn').addEventListener('click', performLogin);
+    </script>
 </body>
 
 </html>
