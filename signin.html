@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Rental Website</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        sessionStorage.setItem("search", "");
+    </script>
+    <!-- Include jQuery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header contains several hypertexts to navigate through the website-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Hypertext at top left, clicking it will [if at index.html] refresh the page or [if at other] go back to index.html -->
+            <div class="ms-4">
+                <img src="img/Utar.png" alt="Books Rental Library Logo" height="30">
+                <a class="navbar-brand" href="index.html">Book Rental Library</a>
+            </div>
+            <!-- Switch to dropdown button when small screen is detected-->
+            <div class="me-4">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <!-- Hypertexts at top right, they can be clicked to go to different page -->
+            <div class="collapse navbar-collapse me-4" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="browse.html">Browse Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rentedbooks.html">Rented Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signin.html"> Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signin.html"> Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="custom-container">
+            <div class="custom-image-section">
+                <div class="custom-image-wrapper">
+                    <img src="img/Book bg.webp" alt="">
+                </div>
+        
+                <div class="custom-content-container">
+                    <h1 class="custom-section-heading"> Empowering Minds Through
+                        <span>Digital Books.</span>
+                    </h1>
+                    <p class="custom-section-paragraph"> Every step forward is a step
+                        towards knowledge. Embrace the journey
+                    </p>
+                </div>
+            </div>
+        
+            <div class="custom-form-section">
+                <div class="custom-form-wrapper">
+                    <div class="custom-logo-container">
+                        <a href="index.html" class="custom-log-container">
+                            <img src="img/Utar.png" alt="Logo">
+                        </a>
+                    </div>
+        
+                    <h2>Welcome Back</h2>
+                    <p>Enter your credentials to access your account</p>
+                    <div class="custom-input-container">
+                        <div class="custom-form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" autocomplete="off">
+                        </div>
+                        <div class="custom-form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" autocomplete="off">
+                        </div>
+                    </div>
+        
+                    <div class="custom-remember-forgot">
+                        <div class="custom-remember-me">
+                            <input type="checkbox" value="remember-me" id="remember-me">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+        
+                        <a href="#">Forgot password?</a>
+                    </div>
+        
+                    <button class="custom-login-btn">Log In</button>
+        
+                    <div class="custom-or-divider">or</div>
+        
+                    <button class="custom-google-signin">
+                        <object data="./google.svg"></object>
+                        <span>Sign in with Google</span>
+                    </button>
+                </div>
+            </div>
+        </section>        
+    </main>
+
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Books Rental Library | Query results are from <a
+                            href="https://openlibrary.org/">OpenLibrary</a></p>
+                </div>
+                <div class="col-md-6 text-md-end"> <!-- Align content to the right -->
+                    <a href="https://www.facebook.com/UTARnet" class="text-light me-3"><i
+                            class="fab fa-facebook fa-3x"></i></a>
+                    <a href="https://www.linkedin.com/school/universiti-tunku-abdul-rahman" class="text-light me-3"><i
+                            class="fab fa-linkedin fa-3x"></i></a>
+                    <a href="https://www.instagram.com/UTARnet1" class="text-light"><i
+                            class="fab fa-instagram fa-3x"></i></a>
+                    <!-- Add more social icons as needed -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js">const users = [
+            { username: 'user1', password: 'password1' },
+            { username: 'user2', password: 'password2' }
+        ];
+
+        document.getElementById('login-button').addEventListener('click', function () {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simulated authentication (replace with your authentication logic)
+            const user = users.find(u => u.username === username && u.password === password);
+
+            if (user) {
+                // Redirect to the main page or perform other actions upon successful login
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('login-error').textContent = 'Invalid username or password';
+            }
+        });</script>
+</body>
+
+</html>
