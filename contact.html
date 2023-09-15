@@ -11,7 +11,205 @@
     </script>
     <!-- Include jQuery -->
     <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Include Bootstrap JS --><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Rental Website</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        sessionStorage.setItem("search", "");
+    </script>
+    <!-- Include jQuery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
     <!-- Include Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header contains several hypertexts to navigate through the website-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Hypertext at top left, clicking it will [if at index.html] refresh the page or [if at other] go back to index.html -->
+            <div class="ms-4">
+                <img src="img/Utar.png" alt="Books Rental Library Logo" height="30">
+                <a class="navbar-brand" href="index.html">Books Rental Library</a>
+            </div>
+            <!-- Switch to dropdown button when small screen is detected-->
+            <div class="me-4">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <!-- Hypertexts at top right, they can be clicked to go to different page -->
+            <div class="collapse navbar-collapse me-4" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="browse.html">Browse Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rentedbooks.html">Rented Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item" id="signin-nav">
+                        <a class="nav-link" href="signin.html"> Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container mt-5">
+            <h1>Our Contact</h1>
+            <p class="lead">and team members</p>
+            <div class="card-parent-contact">
+                <div class="card-container-contact">
+                    <div class="card-contact">
+                        <div class="card-front-contact">
+                            <h4>Team Member 1</h4>
+                            <!-- Front side content (photo) -->
+                            <img src="img/Profile.jpg" alt="Image 1">
+                        </div>
+                        <div class="card-back-contact">
+                            <!-- Back side content (description) -->
+                            <p>Name: Phua Wen Shen</p>
+                            <p>StudentID: 20ACB02795</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Repeat the card structure for other cards -->
+                <div class="card-container-contact">
+                    <div class="card-contact">
+                        <div class="card-front-contact">
+                            <h4>Team Member 2</h4>
+                            <!-- Front side content (photo) -->
+                            <img src="image1.jpg" alt="Image 1" class="card-img">
+                        </div>
+                        <div class="card-back-contact">
+                            <!-- Back side content (description) -->
+                            <p>Name: Puat Eng Sing</p>
+                            <p>Student ID: XXXXXXXXX</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="card-container-contact">
+                    <div class="card-contact">
+                        <div class="card-front-contact">
+                            <h4>Team Member 3</h4>
+                            <!-- Front side content (photo) -->
+                            <img src="image1.jpg" alt="Image 1" width="10%">
+                        </div>
+                        <div class="card-back-contact">
+                            <!-- Back side content (description) -->
+                            <p>Name: Ng Shi Qi</p>
+                            <p>Studnet ID: XXXXXXXXXXXXX</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container-contact">
+                    <div class="card-contact">
+                        <div class="card-front-contact">
+                            <h4>Team Member 4</h4>
+                            <!-- Front side content (photo) -->
+                            <img src="image1.jpg" alt="Image 1" width="10%">
+                        </div>
+                        <div class="card-back-contact">
+                            <!-- Back side content (description) -->
+                            <p>Name: Tay Zi Xun</p>
+                            <p>Student ID: XXXXXXXXXXXXXX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+        </section>
+        <section class="container mt-5">
+            <h1>Contact Us</h1>
+            <p class="lead">Feel free to leave us a message:</p>
+        
+            <form id="contactForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Contact Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+        <section class="container mt-5">
+            <h1>Our Book Store Location</h1>
+            <p class="lead">Find us on the Google map:</p>
+            <div class="@embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6690.854094129255!2d101.1398981041387!3d4.334692948720215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cae2c1660815b3%3A0x12c1afc7bf46e288!2sUTAR%20Main%20Library%20-%20Block%20G!5e0!3m2!1sen!2smy!4v1694592152472!5m2!1sen!2smy" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div>
+            </section>
+        
+        
+    </main>
+
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Books Rental Library | Query results are from <a href="https://openlibrary.org/">OpenLibrary</a></p>
+                </div>
+                <div class="col-md-6 text-md-end"> <!-- Align content to the right -->
+                    <a href="https://www.facebook.com/UTARnet" class="text-light me-3"><i class="fab fa-facebook fa-3x"></i></a>
+                    <a href="https://www.linkedin.com/school/universiti-tunku-abdul-rahman" class="text-light me-3"><i class="fab fa-linkedin fa-3x"></i></a>
+                    <a href="https://www.instagram.com/UTARnet1" class="text-light"><i class="fab fa-instagram fa-3x"></i></a>
+                    <!-- Add more social icons as needed -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Function to update the navigation bar based on login status
+        function updateNavigation() {
+            const signinNav = document.getElementById('signin-nav');
+            const userEmail = localStorage.getItem('userEmail');
+
+            if (userEmail) {
+                // Replace "Sign In" with the user's email
+                signinNav.innerHTML = `<a class="nav-link">${userEmail}</a>`;
+            } else {
+                // If not logged in, show "Sign In" link
+                signinNav.innerHTML = `<a class="nav-link" href="signin.html">Sign In</a>`;
+            }
+        }
+
+        // Call the updateNavigation function to initialize the navigation
+        updateNavigation();
+    </script>
+</body>
+</html>
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Include custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
