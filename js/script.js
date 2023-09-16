@@ -212,3 +212,22 @@ if(searchBar)
 var contactForm = document.getElementById("contactForm");
 if(contactForm)
     document.getElementById("contactForm").addEventListener("submit", submitContactForm);
+
+function updateNavigation() {
+    const signinNav = document.getElementById('signin-nav');
+    const rentedBooksNav = document.getElementById('rented-books-nav'); 
+    const logoutNav = document.getElementById('logout-nav'); // New element
+    const userEmail = localStorage.getItem('userEmail');
+
+    if (userEmail) {
+        // Replace "Sign In" with the user's email and show "Logout" link
+        signinNav.innerHTML = ``;
+        logoutNav.style.display = 'block';
+        rentedBooksNav.style.display = 'block';
+    } else {
+        // If not logged in, show "Sign In" link and hide "Logout" link
+        signinNav.innerHTML = `<a class="nav-link" href="signin.html">Sign In</a>`;
+        logoutNav.style.display = 'none';
+        rentedBooksNav.style.display = 'none';
+    }
+}
