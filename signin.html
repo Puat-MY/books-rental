@@ -50,6 +50,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
+                    <li class="nav-item" id="cart-nav" style="display: none;">
+                        <a class="nav-link" href="cart.html">Shopping Cart</a>
+                    </li>
                     <li class="nav-item" id="signin-nav">
                         <a class="nav-link" href="signin.html"> Sign In</a>
                     </li>
@@ -157,8 +160,6 @@
                 // Set the loggedIn variable to true (you would use a proper authentication mechanism in a real app)
                 loggedIn = true;
                 // Store the user's email in local storage
-                var date = new Date();
-                document.cookie = "userEmail=" + email + "; expires=" + (date.getDate() + 5) + "; path=/";
                 localStorage.setItem('userEmail', email);
 
                 // Redirect to the main page or perform other actions upon successful login
