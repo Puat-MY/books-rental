@@ -50,6 +50,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
+                    <li class="nav-item" id="cart-nav" style="display: none;">
+                        <a class="nav-link" href="cart.html">Shopping Cart</a>
+                    </li>
                     <li class="nav-item" id="signin-nav">
                         <a class="nav-link" href="signin.html"> Sign In</a>
                     </li>
@@ -190,6 +193,35 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Logout functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutLink = document.getElementById('logout-link');
+
+            logoutLink.addEventListener('click', () => {
+                // Remove the user's email from local storage
+                localStorage.removeItem('userEmail');
+                // Redirect the user to the login page (you can replace 'signin.html' with your login page)
+                window.location.href = 'signin.html';
+            });
+
+            // Call the updateNavigation function to initialize the navigation
+            updateNavigation();
+        });
+
+        //contact.html
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the form from submitting normally
+
+            // You can add code here to send the form data to your server or perform other actions
+            // For now, let's just show a confirmation message
+            alert('Thank you for your message! We will get back to you soon.');
+
+            // Clear the form fields
+            this.reset();
+        });
+    </script>
 </body>
 
 </html>
