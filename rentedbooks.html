@@ -41,7 +41,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="browse.html">Browse Books</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="rented-books-nav" style="display: none;">
                         <a class="nav-link" href="rentedbooks.html">Rented Books</a>
                     </li>
                     <li class="nav-item">
@@ -49,6 +49,9 @@
                     </li>
                     <li class="nav-item" id="signin-nav">
                         <a class="nav-link" href="signin.html"> Sign In</a>
+                    </li>
+                    <li class="nav-item" id="logout-nav" style="display: none;">
+                        <a class="nav-link" href="#" id="logout-link">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -95,22 +98,21 @@
 
     <script src="js/script.js"></script>
     <script>
-        // Function to update the navigation bar based on login status
-        function updateNavigation() {
-            const signinNav = document.getElementById('signin-nav');
-            const userEmail = localStorage.getItem('userEmail');
 
-            if (userEmail) {
-                // Replace "Sign In" with the user's email
-                signinNav.innerHTML = `<a class="nav-link">${userEmail}</a>`;
-            } else {
-                // If not logged in, show "Sign In" link
-                signinNav.innerHTML = `<a class="nav-link" href="signin.html">Sign In</a>`;
-            }
-        }
+        // Logout functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutLink = document.getElementById('logout-link');
 
-        // Call the updateNavigation function to initialize the navigation
-        updateNavigation();
+            logoutLink.addEventListener('click', () => {
+                // Remove the user's email from local storage
+                localStorage.removeItem('userEmail');
+                // Redirect the user to the login page (you can replace 'signin.html' with your login page)
+                window.location.href = 'signin.html';
+            });
+
+            // Call the updateNavigation function to initialize the navigation
+            updateNavigation();
+        });
     </script>
 </body>
 </html>
