@@ -1,3 +1,9 @@
+var rentedBooks = localStorage.getItem("rentedBooks");
+if(rentedBooks) rentedBooks = JSON.parse(rentedBooks);
+else rentedBooks = [];
+var cart = localStorage.getItem("cart");
+if(cart) cart = JSON.parse(cart);
+else cart = [];
 
 // Function to set the href attribute for all elements with the "rent-now-link" class
 function setRentNowLinks() {
@@ -7,12 +13,12 @@ function setRentNowLinks() {
     }
 }
 
-// Function to store search value as cookie & redirects users to browse.html
+// Function to store search value to sessionStorage & redirects users to browse.html
 function storeSearchSessionStorage(event) {
     event.preventDefault(); // Prevent the default form submission
 
     var searchValue = document.getElementById("searchInput").value;
-
+    
     // Store search term to session storage
     sessionStorage.setItem("search", searchValue);
 
@@ -60,12 +66,12 @@ $(document).ready(function() {
                 $('<td>').text(book.author_name ? book.author_name.join(', ') : 'N/A').appendTo(row);
                 $('<td>').text(book.first_publish_year || 'N/A').appendTo(row);
 
-                var buttonLink = $('<button onclick="rentInit(event)">').attr('value', JSON.stringify(book)).text("Rent");
-                var isAlreadyRented = rentedBooks.some(function (bookJSON) {
-                    var arrBook = JSON.parse(bookJSON);
-                    return arrBook.key === book.key;
+                var buttonLink = $('<button onclick="addToCart(event)">').attr('value', JSON.stringify(book)).text("Add to Cart");
+                var isInCart= cart.some(function (bookJSON) {
+                    var temp = JSON.parse(bookJSON);
+                    return temp.key === book.key;
                 });
-                if(isAlreadyRented) buttonLink.addClass("btn btn-secondary");
+                if(isInCart) buttonLink.addClass("btn btn-secondary");
                 else buttonLink.addClass("btn btn-primary");
                 $('<td>').appendTo(row).append(buttonLink);
             });
@@ -80,9 +86,52 @@ $(document).ready(function() {
 
 });
 
+function addToCart(event) {
+    event.preventDefault();
+    // Check if the user is logged in
+    const userEmail = localStorage.getItem('userEmail');
+
+    if (!userEmail) {
+        // If not logged in, prompt the user to log in
+        alert('Please sign in to add items to your cart.');
+        // Redirect the user to the login page (you can replace 'signin.html' with your login page)
+        window.location.href = 'signin.html';
+        return; // Exit the function to prevent adding to the cart
+    }
+
+    // Get the existing cart data from localStorage or initialize an empty array
+    var book = event.target.value;
+    var isInCart = cart.some(function (bookJSON) {
+        return bookJSON === book;
+    });
+
+    if (isInCart) {
+        alert("You have already rented this book.");
+    } else {
+        // Add the new item to the cart
+        cart.push(book);
+
+        // Store the updated cart data back in localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        event.target.className = "btn btn-secondary";
+
+        book = JSON.parse(book);
+        alert(`${book.title} has been successfully added to your cart.`);
+    }
+
+}
+
 // Function triggered on submission of rent request
 function rentInit(event) {
     event.preventDefault();
+
+    // Allow rent book only after login
+    var email = localStorage.getItem("userEmail");
+    if(!email) {
+        alert("You are not signed in yet! Please sign in to rent books!");
+        return;
+    }
     
     // Parse the selected book from the button's value
     var selectedBook = event.target.value;
@@ -156,107 +205,88 @@ function createTable(header, array) {
     return table;
 }
 
-// Function to display rented books
-function displayRentedBooks() {
-    const rentedBooksContainer = document.getElementById('historyTable');
+// Function for printing rented books
+function printRentedBooks() {
 
-     // Clear the contents of the rentedBooksContainer
-     rentedBooksContainer.innerHTML = '';
+    var outputTable = document.getElementById("historyTable");
 
-    // Get rented books from local storage as objects
-    const rentedBooks = JSON.parse(localStorage.getItem('rentedBooks')) || [];
+    if(!outputTable) return; // Check if historyTable exists in current page. End (return) function if not found.
+
+    var headers = ["Title", "Author", "Action"];
+    outputTable.innerHTML = ""; // Clear the previous content
 
     if (rentedBooks.length === 0) {
-        rentedBooksContainer.innerHTML = '<p>You have no rented books yet.</p>';
+        outputTable.innerHTML = "You haven't rented any books yet.";
     } else {
-        // Create an HTML table to display rented books
-        const table = document.createElement('table');
-        table.className = 'table table-striped';
-
-        // Create table headers
-        const thead = document.createElement('thead');
-        const headerRow = document.createElement('tr');
-        ['Title', 'Author', 'Action'].forEach(function (header) {
-            const th = document.createElement('th');
-            th.textContent = header;
-            headerRow.appendChild(th);
-        });
-        thead.appendChild(headerRow);
-
-        // Create table body
-        const tbody = document.createElement('tbody');
-
-        rentedBooks.forEach(function (book) { // Loop through objects directly
-            // Create a row for each rented book
-            const row = document.createElement('tr');
-
-            const titleCell = document.createElement('td');
-            titleCell.textContent = book.name || 'N/A'; // Access 'name' property
-
-            const authorCell = document.createElement('td');
-            authorCell.textContent = book.author || 'N/A'; // You can access 'author' property if it exists
-
-            const returnBtn = document.createElement('button');
-            returnBtn.innerHTML = 'Return';
-            returnBtn.className = 'btn btn-primary';
-            returnBtn.value = JSON.stringify(book); // Store the object as JSON string
-            returnBtn.addEventListener('click', returnBook);
-
-            const returnBtnCell = document.createElement('td');
-            returnBtnCell.appendChild(returnBtn);
-
-            row.appendChild(titleCell);
-            row.appendChild(authorCell);
-            row.appendChild(returnBtnCell);
-
-            tbody.appendChild(row);
-        });
-
-        // Append the header and body to the table
-        table.appendChild(thead);
-        table.appendChild(tbody);
-
-        // Append the table to the container
-        rentedBooksContainer.appendChild(table);
+        outputTable.appendChild(createTable(headers, rentedBooks));
     }
 }
 
-
-
-// Function to handle returning a rented book
-function returnBook(event) {
+//Written by Phua
+//contact.html
+// Handle form submission
+function submitContactForm(event) {
     event.preventDefault();
 
-    // Get the selected book from the button's value
-    const selectedBook = JSON.parse(event.target.value);
+    var contactForm = document.getElementById("contactForm");
 
-    // Get the rentedBooks from localStorage
-    const rentedBooks = JSON.parse(localStorage.getItem('rentedBooks')) || [];
+    if(!contactForm) return;
 
-    // Check if the selected book matches any rented book in the array
-    const indexToRemove = rentedBooks.findIndex(function (book) {
-        return book.name === selectedBook.name && book.author === selectedBook.author;
-    });
+    alert("Thank you for your message! We will get back to you soon.");
 
-    if (indexToRemove !== -1) {
-        // Remove the selected book from rentedBooks array
-        rentedBooks.splice(indexToRemove, 1);
+    // Clear the form fields
+    document.write(contactForm.innerHTML);
+};
 
-        // Update the rentedBooks array in local storage
-        localStorage.setItem('rentedBooks', JSON.stringify(rentedBooks));
+function returnBook(event) {
+    event.preventDefault();
+    var outputTable = document.getElementById("historyTable");
+    var headers = ["Title", "Author", "Action"];
+    rentedBooks.splice(rentedBooks.indexOf(event.target.value), 1);
+    outputTable.innerHTML = "";
+    outputTable.appendChild(createTable(headers, rentedBooks));
+    localStorage.setItem("rentedBooks", JSON.stringify(rentedBooks));
+}
 
-        // Refresh the rented books display
-        displayRentedBooks();
+function updateNavigation() {
+    const signinNav = document.getElementById('signin-nav');
+    const rentedBooksNav = document.getElementById('rented-books-nav'); 
+    const logoutNav = document.getElementById('logout-nav');
+    const cartBtn = document.getElementById("cart-nav");
+    const userEmail = localStorage.getItem('userEmail');
+
+    if (userEmail) {
+        // Replace "Sign In" with the user's email and show "Logout" link
+        signinNav.innerHTML = ``;
+        logoutNav.style.display = 'block';
+        rentedBooksNav.style.display = 'block';
+        cartBtn.style.display = "block";
+        
     } else {
-        alert('This book is not currently rented.');
+        // If not logged in, show "Sign In" link and hide "Logout" link
+        signinNav.innerHTML = `<a class="nav-link" href="signin.html">Sign In</a>`;
+        logoutNav.style.display = 'none';
+        rentedBooksNav.style.display = 'none';
     }
 }
 
+// Setup logout functionality when user clicks "Logout" in header bar
+document.addEventListener('DOMContentLoaded', function () {
+    const logoutLink = document.getElementById('logout-link');
 
-
+    logoutLink.addEventListener('click', () => {
+        // Remove the user's email from local storage
+        localStorage.clear();
+        sessionStorage.clear();
+        // Redirect the user to the login page (you can replace 'signin.html' with your login page)
+        window.location.href = 'signin.html';
+    });
+});
 
 // Execute these lines when page loads
 window.addEventListener("load", setRentNowLinks);
+window.addEventListener("load", printRentedBooks);
+window.addEventListener("load", updateNavigation);
 
 var searchBar = document.getElementById("searchBar");
 if(searchBar)
@@ -265,27 +295,3 @@ if(searchBar)
 var contactForm = document.getElementById("contactForm");
 if(contactForm)
     document.getElementById("contactForm").addEventListener("submit", submitContactForm);
-
-function updateNavigation() {
-    const signinNav = document.getElementById('signin-nav');
-    const rentedBooksNav = document.getElementById('rented-books-nav'); 
-    const cartNav = document.getElementById('cart-nav')
-    const logoutNav = document.getElementById('logout-nav'); // New element
-    const userEmail = localStorage.getItem('userEmail');
-
-    if (userEmail) {
-        // Replace "Sign In" with the user's email and show "Logout" link
-        signinNav.innerHTML = ``;
-        logoutNav.style.display = 'block';
-        rentedBooksNav.style.display = 'block';
-        cartNav.style.display = 'block';
-    } else {
-        // If not logged in, show "Sign In" link and hide "Logout" link
-        signinNav.innerHTML = `<a class="nav-link" href="signin.html">Sign In</a>`;
-        logoutNav.style.display = 'none';
-        rentedBooksNav.style.display = 'none';
-        cartNav.style.display = 'none';
-    }
-}
-
-

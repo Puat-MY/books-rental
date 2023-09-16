@@ -1,25 +1,38 @@
+var cart = localStorage.getItem("cart");
+if(cart) cart = JSON.parse(cart);
+else cart = [];
+
 // Function to display cart items and calculate the total price
 function displayCartItems() {
-    // Get cart data from localStorage (you should have saved it earlier)
-    const cart = JSON.parse(localStorage.getItem('cart'));
 
-    if (!cart || cart.length === 0) {
-        document.getElementById('cart-items-container').innerHTML = '<p>Your cart is empty.</p>';
+    if (cart.length === 0) {
+        document.getElementById('cart-items-container').textContent = '<p>Your cart is empty.</p>';
         document.getElementById('total-price').textContent = '0.00';
     } else {
-        let totalPrice = 0;
+        let totalPrice = cart.length*20;
         const cartItemsContainer = document.getElementById('cart-items-container');
         cartItemsContainer.innerHTML = '';
 
         cart.forEach((item) => {
             const itemElement = document.createElement('div');
-            itemElement.innerHTML = `<p>${item.name} - $${item.price}</p>`;
+            itemElement.innerHTML = `<p>${item.name}</p>`;
             cartItemsContainer.appendChild(itemElement);
-            totalPrice += item.price;
         });
-
-        document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+        document.getElementById("cart-items-container").textContent = "You have " + cart.length + " items in cart.";
+        document.getElementById('total-price').textContent = cart.length + " * RM20.00 = " + totalPrice.toFixed(2);
     }
+}
+
+// Function for reading cart array into rentedBooks array
+function cartToRented() {
+    var rentedBooks = localStorage.getItem('rentedBooks');
+    if(!rentedBooks) rentedBooks = [];
+    
+    cart.forEach(item => {
+        rentedBooks.push(JSON.stringify(item));
+    });
+    localStorage.setItem("rentedBooks", rentedBooks);
+    localStorage.removeItem('cart');
 }
 
 // Function to handle payment using credit card
@@ -27,11 +40,7 @@ function processCreditCardPayment() {
     // Show a success message when payment is successful
     alert('Payment successful! Thank you.');
 
-    const rentedBooks = JSON.parse(localStorage.getItem('cart'));
-    if (rentedBooks) {
-        localStorage.setItem('rentedBooks', JSON.stringify(rentedBooks));
-        localStorage.removeItem('cart');
-    }
+    cartToRented();
 
     // Redirect back to index.html
     window.location.href = 'index.html';
@@ -65,11 +74,7 @@ function completeTouchNGoPayment() {
     // Show a success message when payment is successful
     alert('Payment successful! Thank you.');
 
-    const rentedBooks = JSON.parse(localStorage.getItem('cart'));
-    if (rentedBooks) {
-        localStorage.setItem('rentedBooks', JSON.stringify(rentedBooks));
-        localStorage.removeItem('cart');
-    }
+    cartToRented();
 
     // Redirect back to index.html
     window.location.href = 'index.html';

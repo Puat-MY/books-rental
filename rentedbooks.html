@@ -88,7 +88,7 @@
             <div id="historyTable"></div>
 
             <!-- Link to go back to index.html -->
-            <a href="index.html" class="btn btn-primary mt-3">Back to Home</a>
+            <a href="browse.html" class="btn btn-primary mt-3">I want to rent some books!</a>
         </section>
     </main>
 
@@ -113,29 +113,6 @@
     </footer>
 
     <script src="js/script.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Call the function to display rented books
-            displayRentedBooks();
-        });
-        // Logout functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const logoutLink = document.getElementById('logout-link');
-
-            logoutLink.addEventListener('click', () => {
-                // Remove the user's email from local storage
-                localStorage.removeItem('userEmail');
-                // Redirect the user to the login page (you can replace 'signin.html' with your login page)
-                window.location.href = 'signin.html';
-            });
-
-            // Call the updateNavigation function to initialize the navigation
-            updateNavigation();
-        });
-
-
-    </script>
 </body>
 
 </html>

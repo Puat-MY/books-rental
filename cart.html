@@ -118,31 +118,80 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script src="js/cart.js"></script>
     <script>
-        // Logout functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const logoutLink = document.getElementById('logout-link');
-
-            logoutLink.addEventListener('click', () => {
-                // Remove the user's email from local storage
-                localStorage.removeItem('userEmail');
-                // Redirect the user to the login page (you can replace 'signin.html' with your login page)
-                window.location.href = 'signin.html';
-            });
-
-            // Call the updateNavigation function to initialize the navigation
-            updateNavigation();
-        });
+        var cart = localStorage.getItem("cart");
+        if(cart) cart = JSON.parse(cart);
+        else cart = [];
 
         // Call the updateCartDisplay function to initialize the cart display
         updateCartDisplay();
 
         const checkoutButton = document.getElementById('checkout-btn');
         document.getElementById('checkout-button').addEventListener('click', () => {
+            if(cart.length == 0) {
+                alert("Your cart is empty!");
+                return;
+            }
             // Redirect to the checkout page (checkout.html)
             window.location.href = 'payment.html';
         });
+
+        // Function to update the cart display
+        function updateCartDisplay() {
+
+            // Display the "Your cart is empty." message if the cart is empty
+            const cartItemsContainer = document.getElementById('cart-items-container');
+            if (!cart || cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+            } else {
+                cartItemsContainer.innerHTML = ''; // Clear the "Your cart is empty." message
+
+                // Calculate the total price of items in the cart
+                const totalPrice = cart.length * 20;
+
+                // Display cart items and update cart summary
+                const cartList = document.getElementById('cart-list');
+                const cartSummary = document.getElementById('cart-summary');
+                cartList.innerHTML = ''; // Clear the cart list
+
+                cart.forEach((item, index) => {
+                    item = JSON.parse(item);
+                    const listItem = document.createElement('li');
+                    listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+                    listItem.innerHTML = `
+                        ${item.title} by ${item.author_name}
+                        <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Remove</button>
+                    `;
+                    cartList.appendChild(listItem);
+                });
+
+                cartSummary.innerHTML = `
+                    <p>Total Price: RM${totalPrice.toFixed(2)}</p>
+                    <p>Total Items: ${cart.length}</p>
+                `;
+            }
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(index) {
+
+            // Remove the item at the specified index
+            if (index >= 0 && index < cart.length) {
+                cart.splice(index, 1);
+            }
+
+            // Store the updated cart data back in localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Update the cart display
+            updateCartDisplay();
+
+            // Check if the cart is empty after removal
+            if (!cart || cart.length === 0) {
+                // Redirect to index.html
+                window.location.href = 'index.html';
+            }
+        }
     </script>
 </body>
 

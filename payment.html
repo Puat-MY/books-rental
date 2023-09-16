@@ -26,7 +26,7 @@
             <div id="cart-items-container">
                 <!-- Display cart items here -->
             </div>
-            <p>Total Price: $<span id="total-price">0.00</span></p>
+            <p>Total Price: <span id="total-price">RM0.00</span></p>
 
             <!-- Payment Options -->
             <h3>Select Payment Method:</h3>
@@ -67,8 +67,8 @@
             <!-- Touch 'n Go Payment (Initially hidden) -->
             <div id="touchNGoPayment" style="display: none;">
                 <h3>Touch 'n Go Payment</h3>
-                <img id="qrcode" alt="QR Code">
-                <button id="payment-success-button" class="btn btn-success">Payment Successful</button>
+                <p><img id="qrcode" alt="QR Code"></p>
+                <p><button type="button" class="btn btn-primary" id="payment-success-button">Pay</button></p>
             </div>
             <button class="btn btn-primary mt-3" onclick="goToCartPage()">Back to Cart</button>
         </div>
@@ -95,25 +95,9 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script src="js/cart.js"></script>
     <script src="js/checkout.js"></script>
 
     <script>
-        // Logout functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const logoutLink = document.getElementById('logout-link');
-
-            logoutLink.addEventListener('click', () => {
-                // Remove the user's email from local storage
-                localStorage.removeItem('userEmail');
-                // Redirect the user to the login page (you can replace 'signin.html' with your login page)
-                window.location.href = 'signin.html';
-            });
-
-            // Call the updateNavigation function to initialize the navigation
-            updateNavigation();
-        });
-
         const paymentSuccessButton = document.getElementById('payment-success-button');
         if (paymentSuccessButton) {
             paymentSuccessButton.addEventListener('click', completeTouchNGoPayment);

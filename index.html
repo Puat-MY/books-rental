@@ -93,7 +93,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Harry Potter and the Deathly Hallows</h5>
                             <p class="card-text">J.K. Rowling</p>
-                            <button class="btn btn-primary" onclick="addToCart('Harry Potter and the Deathly Hallows', 19.99)">Add to Cart</button>
+                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                         <div class="card-body">
                             <h5 class="card-title">The Imperfections of Memory</h5>
                             <p class="card-text">Angelina Aludo</p>
-                            <button class="btn btn-primary" onclick="addToCart('The Imperfections of Memory', 15.99)">Add to Cart</button>
+                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                         <div class="card-body">
                             <h5 class="card-title">The Dreaming Arts</h5>
                             <p class="card-text">Tom Maloney</p>
-                            <button class="btn btn-primary" onclick="addToCart('The Dreaming Arts', 12.99)">Add to Cart</button>
+                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                         <div class="card-body">
                             <h5 class="card-title">A Million To One</h5>
                             <p class="card-text">Tony Faggioli</p>
-                            <button class="btn btn-primary" onclick="addToCart('The Dreaming Arts', 12.99)">Add to Cart</button>
+                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
                         </div>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                         <div class="card-body">
                             <h5 class="card-title">The Light Beyound the Garden Wall</h5>
                             <p class="card-text">Scott Whitehead</p>
-                            <button class="btn btn-primary" onclick="addToCart('The Dreaming Arts', 12.99)">Add to Cart</button>
+                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Harry Potter and the Cursed Child (One and Two)</h5>
                             <p class="card-text">John Tiffany & Jack Throne</p>
-                            <button class="btn btn-primary" onclick="addToCart('Harry Potter and the Cursed Child (One and Two)', 22.99)">Add to Cart</button>
+                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
                 </div>
                         </div>
                     </div>
@@ -168,7 +168,7 @@
                         <div class="card-body">
                             <h5 class="card-title">The Way of the Nameless: Series One</h5>
                             <p class="card-text">Graham Douglass</p>
-                            <button class="btn btn-primary" onclick="addToCart('The Way of the Nameless: Series One', 17.99)">Add to Cart</button>
+                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
                         </div>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Sorrow and Bliss</h5>
                             <p class="card-text">Meg Mason</p>
-                            <button class="btn btn-primary" onclick="addToCart('Sorrow and Bliss', 16.99)">Add to Cart</button>
+                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
                         </div>
                     </div>
                 </div>
@@ -188,7 +188,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Abandoned Kingdom</h5>
                             <p class="card-text">Claudia Wilson</p>
-                            <button class="btn btn-primary" onclick="addToCart('Abandoned Kingdom', 19.99)">Add to Cart</button>
+                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
                         </div>
                     </div>
                 </div>
@@ -203,6 +203,7 @@
                     <p>&copy; 2023 Books Rental Library | Query results are from <a
                             href="https://openlibrary.org/">OpenLibrary</a></p>
                 </div>
+                <!-- Social media icons -->
                 <div class="col-md-6 text-md-end"> <!-- Align content to the right -->
                     <a href="https://www.facebook.com/UTARnet" class="text-light me-3"><i
                             class="fab fa-facebook fa-3x"></i></a>
@@ -210,30 +211,12 @@
                             class="fab fa-linkedin fa-3x"></i></a>
                     <a href="https://www.instagram.com/UTARnet1" class="text-light"><i
                             class="fab fa-instagram fa-3x"></i></a>
-                    <!-- Add more social icons as needed -->
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
-    <script src="js/cart.js"></script>
-    <script>
-        // Logout functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const logoutLink = document.getElementById('logout-link');
-
-            logoutLink.addEventListener('click', () => {
-                // Remove the user's email from local storage
-                localStorage.removeItem('userEmail');
-                // Redirect the user to the login page (you can replace 'signin.html' with your login page)
-                window.location.href = 'signin.html';
-            });
-
-            // Call the updateNavigation function to initialize the navigation
-            updateNavigation();
-        });
-    </script>
 </body>
 
 </html>
