@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <!-- Header contains several hypertexts to navigate through the website-->
     <header>
@@ -28,7 +30,8 @@
             </div>
             <!-- Switch to dropdown button when small screen is detected-->
             <div class="me-4">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
@@ -46,6 +49,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item" id="cart-nav" style="display: none;">
+                        <a class="nav-link" href="cart.html">Shopping Cart</a>
                     </li>
                     <li class="nav-item" id="signin-nav">
                         <a class="nav-link" href="signin.html"> Sign In</a>
@@ -67,7 +73,7 @@
             <form class="form-inline" id="searchBar">
                 <div class="form-group row">
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" placeholder="Search books..." id = "searchRentedBooks">
+                        <input type="text" class="form-control" placeholder="Search books..." id="searchRentedBooks">
                     </div>
                     <div class="col-sm-4">
                         <button class="btn btn-outline-secondary" type="submit">Search</button>
@@ -76,7 +82,11 @@
             </form>
         </section>
         <section class="container mt-5">
+            <!-- Table to display rented books -->
             <div id="historyTable"></div>
+
+            <!-- Link to go back to index.html -->
+            <a href="index.html" class="btn btn-primary mt-3">Back to Home</a>
         </section>
     </main>
 
@@ -84,12 +94,16 @@
         <div class="container py-4">
             <div class="row">
                 <div class="col-md-6">
-                    <p>&copy; 2023 Books Rental Library | Query results are from <a href="https://openlibrary.org/">OpenLibrary</a></p>
+                    <p>&copy; 2023 Books Rental Library | Query results are from <a
+                            href="https://openlibrary.org/">OpenLibrary</a></p>
                 </div>
                 <div class="col-md-6 text-md-end"> <!-- Align content to the right -->
-                    <a href="https://www.facebook.com/UTARnet" class="text-light me-3"><i class="fab fa-facebook fa-3x"></i></a>
-                    <a href="https://www.linkedin.com/school/universiti-tunku-abdul-rahman" class="text-light me-3"><i class="fab fa-linkedin fa-3x"></i></a>
-                    <a href="https://www.instagram.com/UTARnet1" class="text-light"><i class="fab fa-instagram fa-3x"></i></a>
+                    <a href="https://www.facebook.com/UTARnet" class="text-light me-3"><i
+                            class="fab fa-facebook fa-3x"></i></a>
+                    <a href="https://www.linkedin.com/school/universiti-tunku-abdul-rahman" class="text-light me-3"><i
+                            class="fab fa-linkedin fa-3x"></i></a>
+                    <a href="https://www.instagram.com/UTARnet1" class="text-light"><i
+                            class="fab fa-instagram fa-3x"></i></a>
                     <!-- Add more social icons as needed -->
                 </div>
             </div>
@@ -97,5 +111,29 @@
     </footer>
 
     <script src="js/script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Call the function to display rented books
+            displayRentedBooks();
+        });
+        // Logout functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutLink = document.getElementById('logout-link');
+
+            logoutLink.addEventListener('click', () => {
+                // Remove the user's email from local storage
+                localStorage.removeItem('userEmail');
+                // Redirect the user to the login page (you can replace 'signin.html' with your login page)
+                window.location.href = 'signin.html';
+            });
+
+            // Call the updateNavigation function to initialize the navigation
+            updateNavigation();
+        });
+
+
+    </script>
 </body>
+
 </html>
