@@ -10,12 +10,12 @@ function setRentNowLinks() {
     }
 }
 
-// Function to store search value as cookie & redirects users to browse.html
+// Function to store search value to sessionStorage & redirects users to browse.html
 function storeSearchSessionStorage(event) {
     event.preventDefault(); // Prevent the default form submission
 
     var searchValue = document.getElementById("searchInput").value;
-
+    
     // Store search term to session storage
     sessionStorage.setItem("search", searchValue);
 
@@ -86,6 +86,13 @@ $(document).ready(function() {
 // Function triggered on submission of rent request
 function rentInit(event) {
     event.preventDefault();
+
+    // Allow rent book only after login
+    var email = localStorage.getItem("userEmail");
+    if(!email) {
+        alert("You are not signed in yet! Please sign in to rent books!");
+        return;
+    }
     
     // Parse the selected book from the button's value
     var selectedBook = event.target.value;
@@ -201,17 +208,6 @@ function returnBook(event) {
     outputTable.appendChild(createTable(headers, rentedBooks));
     localStorage.setItem("rentedBooks", JSON.stringify(rentedBooks));
 }
-// Execute these lines when page loads
-window.addEventListener("load", setRentNowLinks);
-window.addEventListener("load", printRentedBooks)
-
-var searchBar = document.getElementById("searchBar");
-if(searchBar)
-    document.getElementById("searchBar").addEventListener("submit", storeSearchSessionStorage);
-
-var contactForm = document.getElementById("contactForm");
-if(contactForm)
-    document.getElementById("contactForm").addEventListener("submit", submitContactForm);
 
 function updateNavigation() {
     const signinNav = document.getElementById('signin-nav');
@@ -231,3 +227,28 @@ function updateNavigation() {
         rentedBooksNav.style.display = 'none';
     }
 }
+
+// Setup logout functionality when user clicks "Logout" in header bar
+document.addEventListener('DOMContentLoaded', function () {
+    const logoutLink = document.getElementById('logout-link');
+
+    logoutLink.addEventListener('click', () => {
+        // Remove the user's email from local storage
+        localStorage.removeItem('userEmail');
+        // Redirect the user to the login page (you can replace 'signin.html' with your login page)
+        window.location.href = 'signin.html';
+    });
+});
+
+// Execute these lines when page loads
+window.addEventListener("load", setRentNowLinks);
+window.addEventListener("load", printRentedBooks);
+window.addEventListener("load", updateNavigation);
+
+var searchBar = document.getElementById("searchBar");
+if(searchBar)
+    document.getElementById("searchBar").addEventListener("submit", storeSearchSessionStorage);
+
+var contactForm = document.getElementById("contactForm");
+if(contactForm)
+    document.getElementById("contactForm").addEventListener("submit", submitContactForm);

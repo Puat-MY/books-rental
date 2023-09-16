@@ -157,6 +157,8 @@
                 // Set the loggedIn variable to true (you would use a proper authentication mechanism in a real app)
                 loggedIn = true;
                 // Store the user's email in local storage
+                var date = new Date();
+                document.cookie = "userEmail=" + email + "; expires=" + (date.getDate() + 5) + "; path=/";
                 localStorage.setItem('userEmail', email);
 
                 // Redirect to the main page or perform other actions upon successful login

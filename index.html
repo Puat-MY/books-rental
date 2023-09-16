@@ -212,22 +212,6 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        // Logout functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const logoutLink = document.getElementById('logout-link');
-
-            logoutLink.addEventListener('click', () => {
-                // Remove the user's email from local storage
-                localStorage.removeItem('userEmail');
-                // Redirect the user to the login page (you can replace 'signin.html' with your login page)
-                window.location.href = 'signin.html';
-            });
-
-            // Call the updateNavigation function to initialize the navigation
-            updateNavigation();
-        });
-    </script>
 </body>
 
 </html>
