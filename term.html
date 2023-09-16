@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Rental Website</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Include jQuery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="css/styles (1).css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_twitter"></a>
+        <a class="a2a_button_pinterest"></a>
+        <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+    </div>
+    
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Hypertext at top left, clicking it will [if at index.html] refresh the page or [if at other] go back to index.html -->
+            <div class="ms-4">
+                <img src="img/Utar.png" alt="Books Rental Library Logo" height="30">
+                <a class="navbar-brand" href="index.html">Book Rental Library</a>
+            </div>
+            <!-- Switch to dropdown button when small screen is detected-->
+            <div class="me-4">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <!-- Hypertexts at top right, they can be clicked to go to different page -->
+            <div class="collapse navbar-collapse me-4" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="browse.html">Browse Books</a>
+                    </li>
+                    <li class="nav-item" id="rented-books-nav" style="display: none;">
+                        <a class="nav-link" href="rentedbooks.html">Rented Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item" id="cart-nav" style="display: none;">
+                        <a class="nav-link" href="cart.html">Shopping Cart</a>
+                    </li>
+                    <li class="nav-item" id="signin-nav">
+                        <a class="nav-link" href="signin.html"> Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <h2 class = "h2_rental" > Rental Term </h2>
+    <div class="content_rental">
+        <ul type="disc">
+            <li> UTAR Book Rental Library assures the quality of all our rental books. </li>
+            <br>
+            <li> The rental period is set at 2 months. Any books not returned within this timeframe become your permanent possessions! </li>
+            <br>
+            <li> The total fee comprises the rental cost, deposit, and postage per shipment. Take advantage of our promotional postage rates at RM5 (WM) / RM10 (EM) per parcel by renting more than 2 books at once. Expect your books to arrive within 3-5 business days (based on Poslaju delivery estimates, valid for Malaysia only). </li>
+            <br>
+            <li>  Renter is responsible for arranging the return postage. You can opt for any postage method, be it fast or standard. We recommend using flexiprepaid for cost savings or reach out to us for a discounted Poslaju rate. Books returned during the rental period incur no overdue fees, even if they reach us afterward. We strongly advise using tracked postage, as we cannot assume responsibility for lost packages during return transit. </li>
+            <br>
+            <li> The deposit will be refunded upon receipt of books in good condition. However, books returned in a damaged state will result in a partial deduction from the deposit. Damages encompass, but are not limited to, issues like water damage, pages that are loose, missing, torn, or marked, missing or damaged covers, as well as spine damage. </li>
+            <br>
+            <li> Our inventory includes various editions of a title, and we will send you the best available copy. Therefore, please note that the book you receive may not exactly match the cover shown in the main item image. </li>
+        </ul>
+    </div>
+    <br>
+    <h3 class="address_rental"> Return Shipping Address : </h3>
+    <p class="address"> 
+        University Tunku Abdul Rahman <br> 
+        Kampar Campus <br>
+        Jalan University <br>
+        Bandar Barat <br>
+        31900, Kampar <br>
+        Perak <br>
+    </p>
+    <p class="address"> <img src = "img/phone.jpeg" width="12"><strong> Phone : </strong> 123-456 7890 </p>
+
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Books Rental Library | Query results are from <a
+                            href="https://openlibrary.org/">OpenLibrary</a></p>
+                </div>
+                <div class="col-md-6 text-md-end"> <!-- Align content to the right -->
+                    <a href="https://www.facebook.com/UTARnet" class="text-light me-3"><i
+                            class="fab fa-facebook fa-3x"></i></a>
+                    <a href="https://www.linkedin.com/school/universiti-tunku-abdul-rahman" class="text-light me-3"><i
+                            class="fab fa-linkedin fa-3x"></i></a>
+                    <a href="https://www.instagram.com/UTARnet1" class="text-light"><i
+                            class="fab fa-instagram fa-3x"></i></a>
+                    <!-- Add more social icons as needed -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
