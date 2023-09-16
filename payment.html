@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Rental Website</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        sessionStorage.setItem("search", "");
+    </script>
+    <!-- Include jQuery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <main class="container mt-5">
+        <div class="container mt-5">
+            <h1>Checkout</h1>
+            <div id="cart-items-container">
+                <!-- Display cart items here -->
+            </div>
+            <p>Total Price: $<span id="total-price">0.00</span></p>
+
+            <!-- Payment Options -->
+            <h3>Select Payment Method:</h3>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="creditCardRadio"
+                    value="creditCard">
+                <label class="form-check-label" for="creditCardRadio">
+                    Credit Card
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="touchNGoRadio" value="touchNGo">
+                <label class="form-check-label" for="touchNGoRadio">
+                    Touch 'n Go
+                </label>
+            </div>
+
+            <!-- Credit Card Form (Initially hidden) -->
+            <div id="creditCardForm" style="display: none;">
+                <h3>Enter Credit Card Information:</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="cardNumber" class="form-label">Card Number</label>
+                        <input type="text" class="form-control" id="cardNumber">
+                    </div>
+                    <div class="mb-3">
+                        <label for="expirationDate" class="form-label">Expiration Date</label>
+                        <input type="text" class="form-control" id="expirationDate">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <input type="text" class="form-control" id="cvv">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="processCreditCardPayment()">Pay</button>
+                </form>
+            </div>
+
+            <!-- Touch 'n Go Payment (Initially hidden) -->
+            <div id="touchNGoPayment" style="display: none;">
+                <h3>Touch 'n Go Payment</h3>
+                <img id="qrcode" alt="QR Code">
+                <button id="payment-success-button" class="btn btn-success">Payment Successful</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Books Rental Library | Query results are from <a
+                            href="https://openlibrary.org/">OpenLibrary</a></p>
+                </div>
+                <div class="col-md-6 text-md-end"> <!-- Align content to the right -->
+                    <a href="https://www.facebook.com/UTARnet" class="text-light me-3"><i
+                            class="fab fa-facebook fa-3x"></i></a>
+                    <a href="https://www.linkedin.com/school/universiti-tunku-abdul-rahman" class="text-light me-3"><i
+                            class="fab fa-linkedin fa-3x"></i></a>
+                    <a href="https://www.instagram.com/UTARnet1" class="text-light"><i
+                            class="fab fa-instagram fa-3x"></i></a>
+                    <!-- Add more social icons as needed -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+
+    <script>
+        // Logout functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutLink = document.getElementById('logout-link');
+
+            logoutLink.addEventListener('click', () => {
+                // Remove the user's email from local storage
+                localStorage.removeItem('userEmail');
+                // Redirect the user to the login page (you can replace 'signin.html' with your login page)
+                window.location.href = 'signin.html';
+            });
+
+            // Call the updateNavigation function to initialize the navigation
+            updateNavigation();
+        });
+
+        const paymentSuccessButton = document.getElementById('payment-success-button');
+        if (paymentSuccessButton) {
+            paymentSuccessButton.addEventListener('click', completeTouchNGoPayment);
+        }
+    </script>
+</body>
+
+</html>

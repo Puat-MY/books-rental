@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Rental Website</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        sessionStorage.setItem("search", "");
+    </script>
+    <!-- Include jQuery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header contains several hypertexts to navigate through the website-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Hypertext at top left, clicking it will [if at index.html] refresh the page or [if at other] go back to index.html -->
+            <div class="ms-4">
+                <img src="img/Utar.png" alt="Books Rental Library Logo" height="30">
+                <a class="navbar-brand" href="index.html">Book Rental Library</a>
+            </div>
+            <!-- Switch to dropdown button when small screen is detected-->
+            <div class="me-4">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <!-- Hypertexts at top right, they can be clicked to go to different page -->
+            <div class="collapse navbar-collapse me-4" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="browse.html">Browse Books</a>
+                    </li>
+                    <li class="nav-item" id="rented-books-nav" style="display: none;">
+                        <a class="nav-link" href="rentedbooks.html">Rented Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item" id="signin-nav">
+                        <a class="nav-link" href="signin.html"> Sign In</a>
+                    </li>
+                    <li class="nav-item" id="cart-nav" style="display: none;">
+                        <a class="nav-link" href="cart.html">Shopping Cart</a>
+                    </li>
+                    <li class="nav-item" id="logout-nav" style="display: none;">
+                        <a class="nav-link" href="#" id="logout-link">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+        <h1>Your Shopping Cart</h1>
+        <div id="cart-items-container">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Display cart items -->
+                <h2>Cart Items</h2>
+                <ul id="cart-list" class="list-group">
+                    <!-- Cart items will be dynamically generated here -->
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <!-- Cart summary and checkout -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cart Summary</h5>
+                        <div id="cart-summary">
+                            <!-- Cart summary information will be displayed here -->
+                        </div>
+                        <hr>
+                        <button id="checkout-button" class="btn btn-success">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Books Rental Library | Query results are from <a
+                            href="https://openlibrary.org/">OpenLibrary</a></p>
+                </div>
+                <div class="col-md-6 text-md-end"> <!-- Align content to the right -->
+                    <a href="https://www.facebook.com/UTARnet" class="text-light me-3"><i
+                            class="fab fa-facebook fa-3x"></i></a>
+                    <a href="https://www.linkedin.com/school/universiti-tunku-abdul-rahman" class="text-light me-3"><i
+                            class="fab fa-linkedin fa-3x"></i></a>
+                    <a href="https://www.instagram.com/UTARnet1" class="text-light"><i
+                            class="fab fa-instagram fa-3x"></i></a>
+                    <!-- Add more social icons as needed -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Logout functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutLink = document.getElementById('logout-link');
+
+            logoutLink.addEventListener('click', () => {
+                // Remove the user's email from local storage
+                localStorage.removeItem('userEmail');
+                // Redirect the user to the login page (you can replace 'signin.html' with your login page)
+                window.location.href = 'signin.html';
+            });
+
+            // Call the updateNavigation function to initialize the navigation
+            updateNavigation();
+        });
+
+        // Call the updateCartDisplay function to initialize the cart display
+        updateCartDisplay();
+
+        const checkoutButton = document.getElementById('checkout-btn');
+        document.getElementById('checkout-button').addEventListener('click', () => {
+            // Redirect to the checkout page (checkout.html)
+            window.location.href = 'payment.html';
+        });
+    </script>
+</body>
+
+</html>
