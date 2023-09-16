@@ -5,6 +5,17 @@ let cart = [];
 
 // Function to add an item to the cart
 function addToCart(productName, price) {
+    // Check if the user is logged in
+    const userEmail = localStorage.getItem('userEmail');
+
+    if (!userEmail) {
+        // If not logged in, prompt the user to log in
+        alert('Please sign in to add items to your cart.');
+        // Redirect the user to the login page (you can replace 'signin.html' with your login page)
+        window.location.href = 'signin.html';
+        return; // Exit the function to prevent adding to the cart
+    }
+
     const item = {
         name: productName,
         price: price,
@@ -24,6 +35,7 @@ function addToCart(productName, price) {
     // Optionally, you can update the cart display
     updateCartDisplay();
 }
+
 
 // Function to update the cart display
 function updateCartDisplay() {
