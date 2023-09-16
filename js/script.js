@@ -163,10 +163,10 @@ function createTable(header, array) {
 function printRentedBooks() {
 
     var outputTable = document.getElementById("historyTable");
+
+    if(!outputTable) return; // Check if historyTable exists in current page. End (return) function if not found.
+
     var headers = ["Title", "Author", "Action"];
-
-    if(!outputTable) return;
-
     outputTable.innerHTML = ""; // Clear the previous content
 
     if (rentedBooks.length === 0) {
@@ -179,16 +179,18 @@ function printRentedBooks() {
 //Written by Phua
 //contact.html
 // Handle form submission
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent the form from submitting normally
+function submitContactForm(event) {
+    event.preventDefault();
 
-    // You can add code here to send the form data to your server or perform other actions
-    // For now, let's just show a confirmation message
-    alert('Thank you for your message! We will get back to you soon.');
+    var contactForm = document.getElementById("contactForm");
+
+    if(!contactForm) return;
+
+    alert("Thank you for your message! We will get back to you soon.");
 
     // Clear the form fields
-    this.reset();
-});
+    document.write(contactForm.innerHTML);
+};
 
 function returnBook(event) {
     event.preventDefault();
@@ -201,5 +203,12 @@ function returnBook(event) {
 }
 // Execute these lines when page loads
 window.addEventListener("load", setRentNowLinks);
-window.addEventListener("load", printRentedBooks);
-document.getElementById("searchBar").addEventListener("submit", storeSearchSessionStorage);
+window.addEventListener("load", printRentedBooks)
+
+var searchBar = document.getElementById("searchBar");
+if(searchBar)
+    document.getElementById("searchBar").addEventListener("submit", storeSearchSessionStorage);
+
+var contactForm = document.getElementById("contactForm");
+if(contactForm)
+    document.getElementById("contactForm").addEventListener("submit", submitContactForm);
