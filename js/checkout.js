@@ -100,6 +100,13 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeCheckout();
 });
 
+//Exit back to cart.html
+function goToCartPage() {
+    // Redirect the user to the cart page (you can replace 'cart.html' with your cart page)
+    window.location.href = 'cart.html';
+}
+
+
 
 
 
