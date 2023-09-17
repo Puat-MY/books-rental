@@ -29,12 +29,15 @@
                 <a class="navbar-brand" href="index.html">Book Rental Library</a>
             </div>
             <!-- Switch to dropdown button when small screen is detected-->
-            <div class="me-4">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="index.html">Home</a>
+                <a href="browse.html">Browse Books</a>
+                <a href="term.html">Terms and Conditions</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="signin.html"> Sign In</a>
+             </div>
+             <span class="toggle_icon" onclick="openNav()"><img src="img/toggle-icon.png"></span>
             <!-- Hypertexts at top right, they can be clicked to go to different page -->
             <div class="collapse navbar-collapse me-4" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
@@ -47,6 +50,9 @@
                     <li class="nav-item" id="rented-books-nav" style="display: none;">
                         <a class="nav-link" href="rentedbooks.html">Rented Books</a>
                     </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="term.html">Terms and Conditions</a>
+                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>

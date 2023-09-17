@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Rental Website</title>
+
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script>
-        sessionStorage.setItem("search", "");
-    </script>
     <!-- Include jQuery -->
     <script src="js/jquery-3.7.1.min.js"></script>
     <!-- Include Bootstrap JS -->
@@ -20,8 +18,16 @@
 </head>
 
 <body>
-    <!-- Header contains several hypertexts to navigate through the website-->
+
     <header>
+        <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_button_pinterest"></a>
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+        </div>
+        
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <!-- Hypertext at top left, clicking it will [if at index.html] refresh the page or [if at other] go back to index.html -->
             <div class="ms-4">
@@ -29,12 +35,15 @@
                 <a class="navbar-brand" href="index.html">Book Rental Library</a>
             </div>
             <!-- Switch to dropdown button when small screen is detected-->
-            <div class="me-4">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="index.html">Home</a>
+                <a href="browse.html">Browse Books</a>
+                <a href="term.html">Terms and Conditions</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="signin.html"> Sign In</a>
+             </div>
+             <span class="toggle_icon" onclick="openNav()"><img src="img/toggle-icon.png"></span>
             <!-- Hypertexts at top right, they can be clicked to go to different page -->
             <div class="collapse navbar-collapse me-4" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
@@ -47,6 +56,9 @@
                     <li class="nav-item" id="rented-books-nav" style="display: none;">
                         <a class="nav-link" href="rentedbooks.html">Rented Books</a>
                     </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="term.html">Terms and Conditions</a>
+                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
@@ -65,136 +77,237 @@
             </div>
         </nav>
     </header>
+    
+    <section class="container mt-5">
+        <h1>Welcome to the Book Rental Library</h1>
+        <p class="lead">Rent books from our vast collection and enjoy reading.</p>
+        <!-- Search bar -->
+        <form class="form-inline" id="searchBar">
+            <div class="form-group row">
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="Search books..." id="searchInput">
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_twitter"></a>
+        <a class="a2a_button_pinterest"></a>
+        <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+    </div>
 
-    <main>
-        <section class="container mt-5">
-            <h1>Welcome to the Book Rental Library</h1>
-            <p class="lead">Rent books from our vast collection and enjoy reading.</p>
-            <!-- Search bar -->
-            <form class="form-inline" id="searchBar">
-                <div class="form-group row">
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" placeholder="Search books..." id="searchInput">
-                    </div>
-                    <div class="col-sm-4">
-                        <button class="btn btn-outline-secondary" type="submit">Search</button>
-                    </div>
-                </div>
-            </form>
-        </section>
-        <section class="container mt-5">
-            <h2>Featured Books</h2>
-            <div class="row">
-                <!-- Display featured books here -->
-                <!-- Example book card -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="img/book1.jpg" class="card-img-top book-height" alt="Book 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Harry Potter and the Deathly Hallows</h5>
-                            <p class="card-text">J.K. Rowling</p>
-                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+    <br>
+    <br>
+    <!-- book section 1 start -->
+    <div class="book_section">
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <h1 class="book_taital">Category 1</h1>
+                        <div class="seemore_bt"><a href="YongAdultFiction.html" style="text-align: right; color:red;">See More</a></div>
+                        <div class="book_section_2">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="book_text">Book 1</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">RM 30</span></p>
+                                        <div class="book_img"><img src="#"></div>
+                                        <div class="btn_main">
+                                            <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                                            <div class="seedetails_bt"><a href="#">Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="book_text">Book 2</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">RM 30</span></p>
+                                        <div class="book_img"><img src="#"></div>
+                                        <div class="btn_main">
+                                            <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                                            <div class="seedetails_bt"><a href="#">Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="book_text">Book 3</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">RM 30</span></p>
+                                        <div class="book_img"><img src="#"></div>
+                                        <div class="btn_main">
+                                            <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                                            <div class="seedetails_bt"><a href="#">Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="img/book2.jpg" class="card-img-top book-height" alt="Book 2">
-                        <div class="card-body">
-                            <h5 class="card-title">The Imperfections of Memory</h5>
-                            <p class="card-text">Angelina Aludo</p>
-                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
+
+                <div class="carousel-item">
+                    <div class="container">
+                        <h1 class="book_taital">Category 1</h1>
+                        <div class="seemore_bt"><a href="YongAdultFiction.html" style="text-align: right; color:red;">See More</a></div>
+                        <div class="book_section_2">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="book_text">Book 4</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">RM 30</span></p>
+                                        <div class="book_img"><img src="#"></div>
+                                        <div class="btn_main">
+                                            <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                                            <div class="seedetails_bt"><a href="#">Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="book_text">Book 5</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">RM 30</span></p>
+                                        <div class="book_img"><img src="#"></div>
+                                        <div class="btn_main">
+                                            <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                                            <div class="seedetails_bt"><a href="#">Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="book_text">Book 6</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">RM 30</span></p>
+                                        <div class="book_img"><img src="#"></div>
+                                        <div class="btn_main">
+                                            <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                                            <div class="seedetails_bt"><a href="#">Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="img/book3.jpg" class="card-img-top book-height" alt="Book 3">
-                        <div class="card-body">
-                            <h5 class="card-title">The Dreaming Arts</h5>
-                            <p class="card-text">Tom Maloney</p>
-                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
-        </section>
-        <section class="container mt-5">
-            <h2>Trending Now</h2>
-            <div class="row">
-                <!-- Display featured books here -->
-                <!-- Example book card -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="img/book4.jpg" class="card-img-top book-height" alt="Book 4">
-                        <div class="card-body">
-                            <h5 class="card-title">A Million To One</h5>
-                            <p class="card-text">Tony Faggioli</p>
-                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
+            <a class="carousel-control-prev" href="#main_slider" role="button" data-bs-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#main_slider" role="button" data-bs-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>s
+    </div>
+    <!-- book section 1 end -->
+
+    <!-- book section 2 start -->
+    <div class="book_section_2">
+        <div id="sec2_main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <h1 class="book_taital">Category 2</h1>
+                        <div class="seemore_bt"><a href="Romance.html" style="text-align: right; color:red;">See More</a></div>
+                        <div class="book_section_2">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="book_text">Book 1</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">RM 30</span></p>
+                                        <div class="book_img"><img src="#"></div>
+                                        <div class="btn_main">
+                                            <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                                            <div class="seedetails_bt"><a href="#">Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="book_text">Book 2</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">RM 30</span></p>
+                                        <div class="book_img"><img src="#"></div>
+                                        <div class="btn_main">
+                                            <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                                            <div class="seedetails_bt"><a href="#">Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="book_text">Book 3</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">RM 30</span></p>
+                                        <div class="book_img"><img src="#"></div>
+                                        <div class="btn_main">
+                                            <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                                            <div class="seedetails_bt"><a href="#">Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="img/book5.jpg" class="card-img-top book-height" alt="Book 5">
-                        <div class="card-body">
-                            <h5 class="card-title">The Light Beyound the Garden Wall</h5>
-                            <p class="card-text">Scott Whitehead</p>
-                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
+
+                <div class="carousel-item">
+                    <div class="container">
+                        <h1 class="book_taital">Category 2</h1>
+                        <div class="seemore_bt"><a href="Romance.html" style="text-align: right; color:red;">See More</a></div>
+                        <div class="book_section_2">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="book_text">Book 4</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">RM 30</span></p>
+                                        <div class="book_img"><img src="#"></div>
+                                        <div class="btn_main">
+                                            <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                                            <div class="seedetails_bt"><a href="#">Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="book_text">Book 5</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">RM 30</span></p>
+                                        <div class="book_img"><img src="#"></div>
+                                        <div class="btn_main">
+                                            <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                                            <div class="seedetails_bt"><a href="#">Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="book_text">Book 6</h4>
+                                        <p class="price_text">Price <span style="color: #262626;">RM 30</span></p>
+                                        <div class="book_img"><img src="#"></div>
+                                        <div class="btn_main">
+                                            <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                                            <div class="seedetails_bt"><a href="#">Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="img/book6.jpg" class="card-img-top book-height" alt="Book 6">
-                        <div class="card-body">
-                            <h5 class="card-title">Harry Potter and the Cursed Child (One and Two)</h5>
-                            <p class="card-text">John Tiffany & Jack Throne</p>
-                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
-                </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
-        </section>
-        <section class="container mt-5">
-            <h2>New Releases</h2>
-            <div class="row">
-                <!-- Display featured books here -->
-                <!-- Example book card -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="img/book7.jpg" class="card-img-top book-height" alt="Book 7">
-                        <div class="card-body">
-                            <h5 class="card-title">The Way of the Nameless: Series One</h5>
-                            <p class="card-text">Graham Douglass</p>
-                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="img/book8.jpg" class="card-img-top book-height" alt="Book 8">
-                        <div class="card-body">
-                            <h5 class="card-title">Sorrow and Bliss</h5>
-                            <p class="card-text">Meg Mason</p>
-                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="img/book9.jpg" class="card-img-top book-height" alt="Book 9">
-                        <div class="card-body">
-                            <h5 class="card-title">Abandoned Kingdom</h5>
-                            <p class="card-text">Claudia Wilson</p>
-                            <a class="btn btn-primary rent-now-link" href="#">Browse</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+            <a class="carousel-control-prev" href="#sec2_main_slider" role="button" data-bs-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#sec2_main_slider" role="button" data-bs-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </div>
+    <!-- book section 2 end -->
 
     <footer class="bg-dark text-light mt-5">
         <div class="container py-4">
@@ -203,7 +316,6 @@
                     <p>&copy; 2023 Books Rental Library | Query results are from <a
                             href="https://openlibrary.org/">OpenLibrary</a></p>
                 </div>
-                <!-- Social media icons -->
                 <div class="col-md-6 text-md-end"> <!-- Align content to the right -->
                     <a href="https://www.facebook.com/UTARnet" class="text-light me-3"><i
                             class="fab fa-facebook fa-3x"></i></a>
@@ -211,12 +323,72 @@
                             class="fab fa-linkedin fa-3x"></i></a>
                     <a href="https://www.instagram.com/UTARnet1" class="text-light"><i
                             class="fab fa-instagram fa-3x"></i></a>
+                    <!-- Add more social icons as needed -->
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+    
+        $(function () {
+
+            var aPI = "bookList.json";
+
+            $.getJSON(aPI)
+                .done(function (data) {
+                    let category_name = [];
+                    //get category names in json file
+                    for (key in data) {
+                        category_name.push(key);
+                    }
+                    //only show two categories for carousel
+                    const CATEGORY_NUM = 2;
+                    const CAROUSEL_SLIDE_NUM = 2;
+                    //update the category name in carousel title 
+                    const heading_arr = document.querySelectorAll(".book_taital");
+                    var counter = 0;
+                    for (var i = 0; i < CATEGORY_NUM; i++) {
+                        for (var j = 0; j < CAROUSEL_SLIDE_NUM; j++) {
+                            heading_arr[counter].textContent = category_name[i];
+                            counter += 1;
+                        }
+                    }
+                    const CAROUSEL_BOOK_NUM_PER_SLIDE = 3;
+                    counter = 0;
+                    //update the book name, price and image in each column
+                    const book_arr = document.querySelectorAll(".book_text");
+                    const price_arr = document.querySelectorAll(".price_text");
+                    const image_arr = document.querySelectorAll(".book_img");
+                    for(var j=0; j < CATEGORY_NUM; j++){
+                        for (var i = 0; i < CAROUSEL_BOOK_NUM_PER_SLIDE * CAROUSEL_SLIDE_NUM; i++){
+                        book_arr[counter].textContent = data[category_name[j]][i]["Title"];
+                        price_arr[counter].textContent = data[category_name[j]][i]["Price"];
+                        image_arr[counter].innerHTML = '<img src="' + data[category_name[j]][i]["Img"]+ '" width="300" height="400">';
+                        counter += 1;
+                    }
+                    }
+        });
+
+        $(".seedetails_bt").on("click", seeMoreFunction);
+
+        function seeMoreFunction(){
+            var title = $(this).closest(":has(.book_text)").find(".book_text").text();
+            localStorage.setItem("Title", title);
+            window.location.href = 'bookInfo.html';
+        }
+    });
+
+    </script>
+
 </body>
 
 </html>

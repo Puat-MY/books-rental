@@ -29,12 +29,15 @@
                 <a class="navbar-brand" href="index.html">Books Rental Library</a>
             </div>
             <!-- Switch to dropdown button when small screen is detected-->
-            <div class="me-4">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="index.html">Home</a>
+                <a href="browse.html">Browse Books</a>
+                <a href="term.html">Terms and Conditions</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="signin.html"> Sign In</a>
+             </div>
+             <span class="toggle_icon" onclick="openNav()"><img src="img/toggle-icon.png"></span>
             <!-- Hypertexts at top right, they can be clicked to go to different page -->
             <div class="collapse navbar-collapse me-4" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
@@ -47,6 +50,9 @@
                     <li class="nav-item" id="rented-books-nav" style="display: none;">
                         <a class="nav-link" href="rentedbooks.html">Rented Books</a>
                     </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="term.html">Terms and Conditions</a>
+                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
@@ -76,7 +82,7 @@
                         <div class="card-front-contact">
                             <h4>Team Member 1</h4>
                             <!-- Front side content (photo) -->
-                            <img src="img/member1.jpg" alt="Image 1">
+                            <img src="img/member1.jpg" alt="Member 1">
                         </div>
                         <div class="card-back-contact">
                             <!-- Back side content (description) -->
@@ -92,7 +98,7 @@
                         <div class="card-front-contact">
                             <h4>Team Member 2</h4>
                             <!-- Front side content (photo) -->
-                            <img src="img/member2.jpg" alt="Image 1" class="card-img">
+                            <img src="img/member2.jpg" alt="Member 2">
                         </div>
                         <div class="card-back-contact">
                             <!-- Back side content (description) -->
@@ -107,12 +113,12 @@
                         <div class="card-front-contact">
                             <h4>Team Member 3</h4>
                             <!-- Front side content (photo) -->
-                            <img src="img/member3.jpg" alt="Image 1" width="10%">
+                            <img src="img/member3.jpg" alt="Member 3">
                         </div>
                         <div class="card-back-contact">
                             <!-- Back side content (description) -->
                             <p>Name: Ng Shi Qi</p>
-                            <p>Studnet ID: XXXXXXXXXXXXX</p>
+                            <p>Studnet ID: 21ACB04550</p>
                         </div>
                     </div>
                 </div>
@@ -122,12 +128,12 @@
                         <div class="card-front-contact">
                             <h4>Team Member 4</h4>
                             <!-- Front side content (photo) -->
-                            <img src="img/member4.jpg" alt="Image 1" width="10%">
+                            <img src="img/member4.jpg" alt="Member 4">
                         </div>
                         <div class="card-back-contact">
                             <!-- Back side content (description) -->
                             <p>Name: Tay Zi Xun</p>
-                            <p>Student ID: XXXXXXXXXXXXXX</p>
+                            <p>Student ID: 20ACB04548</p>
                         </div>
                     </div>
                 </div>
@@ -220,7 +226,7 @@
             // For now, let's just show a confirmation message
             alert('Thank you for your message! We will get back to you soon.');
 
-            // Clear the form fields
+            // Clear form
             this.reset();
         });
     </script>

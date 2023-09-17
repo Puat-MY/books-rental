@@ -106,7 +106,7 @@ function addToCart(event) {
     });
 
     if (isInCart) {
-        alert("You have already rented this book.");
+        alert("You already had this book in cart.");
     } else {
         // Add the new item to the cart
         cart.push(book);
@@ -224,19 +224,6 @@ function printRentedBooks() {
 
 //Written by Phua
 //contact.html
-// Handle form submission
-function submitContactForm(event) {
-    event.preventDefault();
-
-    var contactForm = document.getElementById("contactForm");
-
-    if(!contactForm) return;
-
-    alert("Thank you for your message! We will get back to you soon.");
-
-    // Clear the form fields
-    document.write(contactForm.innerHTML);
-};
 
 function returnBook(event) {
     event.preventDefault();
@@ -271,19 +258,13 @@ function updateNavigation() {
     }
 }
 
-// Setup logout functionality when user clicks "Logout" in header bar
-document.addEventListener('DOMContentLoaded', function () {
-    const logoutLink = document.getElementById('logout-link');
-    if(!logoutLink) return;
-    logoutLink.addEventListener('click', () => {
-        // Remove the user's email from local storage
-        localStorage.clear();
-        sessionStorage.clear();
-        // Redirect the user to the login page (you can replace 'signin.html' with your login page)
-        window.location.href = 'signin.html';
-    });
-});
-
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
 // Execute these lines when page loads
 window.addEventListener("load", setRentNowLinks);
 window.addEventListener("load", printRentedBooks);
@@ -292,7 +273,3 @@ window.addEventListener("load", updateNavigation);
 var searchBar = document.getElementById("searchBar");
 if(searchBar)
     document.getElementById("searchBar").addEventListener("submit", storeSearchSessionStorage);
-
-var contactForm = document.getElementById("contactForm");
-if(contactForm)
-    document.getElementById("contactForm").addEventListener("submit", submitContactForm);

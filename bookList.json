@@ -1,0 +1,154 @@
+{
+    "YoungAdultFiction":
+    [
+        {
+            "Img":"img/Fiction/TheHungerGames.jpeg",
+            "Title": "The Hunger Games",
+            "Author": "Suzanne Collins",
+            "Synopsis": "In the ruins of a place once known as North America lies the nation of Panem, a shining Capitol surrounded by twelve outlying districts. The Capitol is harsh and cruel and keeps the districts in line by forcing them all to send one boy and one girl between the ages of twelve and eighteen to participate in the annual Hunger Games, a fight to the death on live TV.",
+            "Genres":["Fiction","Advanture", "Fantasy"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Fiction/Twilight.jpg",
+            "Title": "Twilight",
+            "Author": "Stephenie Meyer ",
+            "Synopsis": "About three things I was absolutely positive. First, Edward was a vampire. Second, there was a part of him - and I didn't know how dominant that part might be - that thirsted for my blood. And third, I was unconditionally and irrevocably in love with him. Deeply seductive and extraordinarily suspenseful, Twilight is a love story with bite.",
+            "Genres":["Fantasy","Romance", "Fiction", "Vampire"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Fiction/CatchingFire.jpg",
+            "Title": "Catching Fire",
+            "Author": "Suzanne Collins",
+            "Synopsis": "Against all odds, Katniss Everdeen has won the Hunger Games. She and fellow District 12 tribute Peeta Mellark are miraculously still alive. Katniss should be relieved, happy even. After all, she has returned to her family and her longtime friend, Gale. Yet nothing is the way Katniss wishes it to be. Gale holds her at an icy distance. Peeta has turned his back on her completely. And there are whispers of a rebellion against the Capitol—a rebellion that Katniss and Peeta may have helped create. Much to her shock, Katniss has fueled an unrest that she's afraid she cannot stop. And what scares her even more is that she's not entirely convinced she should try. As time draws near for Katniss and Peeta to visit the districts on the Capitol's cruel Victory Tour, the stakes are higher than ever. If they can't prove, without a shadow of a doubt, that they are lost in their love for each other, the consequences will be horrifying. In Catching Fire, the second novel of the Hunger Games trilogy, Suzanne Collins continues the story of Katniss Everdeen, testing her more than ever before . . . and surprising readers at every turn.",
+            "Genres":["Fiction","Fantasy", "Adventure", "Romance"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Fiction/CityofBones.jpg",
+            "Title": "City of Bones",
+            "Author": "Cassandra Clare",
+            "Synopsis": "When fifteen-year-old Clary Fray heads out to the Pandemonium Club in New York City, she hardly expects to witness a murder― much less a murder committed by three teenagers covered with strange tattoos and brandishing bizarre weapons. Then the body disappears into thin air. It's hard to call the police when the murderers are invisible to everyone else and when there is nothing―not even a smear of blood―to show that a boy has died. Or was he a boy?",
+            "Genres":["Fiction","Romance", "Vampire"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Fiction/HarryPotterandtheSorcerer'sStone.jpeg",
+            "Title": "Harry Potter and the Sorcerer's Stone",
+            "Author": "J.K. Rowling",
+            "Synopsis": "Harry Potter has no idea how famous he is. That's because he's being raised by his miserable aunt and uncle who are terrified Harry will learn that he's really a wizard, just as his parents were. But everything changes when Harry is summoned to attend an infamous school for wizards, and he begins to discover some clues about his illustrious birthright. From the surprising way he is greeted by a lovable giant, to the unique curriculum and colorful faculty at his unusual school, Harry finds himself drawn deep inside a mystical world he never knew existed and closer to his own noble destiny.",
+            "Genres":["Fiction","Advanture", "Magic"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Fiction/Uglies.jpg",
+            "Title": "Uglies",
+            "Author": "Scott Westerfeld",
+            "Synopsis": "Tally is about to turn sixteen, and she can't wait. In just a few weeks she'll have the operation that will turn her from a repellent ugly into a stunning pretty. And as a pretty, she'll be catapulted into a high-tech paradise where her only job is to have fun. But Tally's new friend Shay isn't sure she wants to become a pretty. When Shay runs away, Tally learns about a whole new side of the pretty world—and it isn't very pretty. The authorities offer Tally a choice: find her friend and turn her in, or never turn pretty at all. Tally's choice will change her world forever....",
+            "Genres":["Fiction","Fantasy", "Romance", "Advanture"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Fiction/TheBookThief.jpeg",
+            "Title": "The Book Thief",
+            "Author": "Markus Zusak ",
+            "Synopsis": "It is 1939. Nazi Germany. The country is holding its breath. Death has never been busier, and will be busier still. By her brother’s graveside, Liesel’s life is changed when she picks up a single object, partially hidden in the snow. It is The Gravedigger’s Handbook, left behind there by accident, and it is her first act of book thievery. So begins a love affair with books and words, as Liesel, with the help of her accordian-playing foster father, learns to read. Soon she is stealing books from Nazi book-burnings, the mayor’s wife’s library, wherever there are books to be found. But these are dangerous times. When Liesel’s foster family hides a Jew in their basement, Liesel’s world is both opened up, and closed down. In superbly crafted writing that burns with intensity, award-winning author Markus Zusak has given us one of the most enduring stories of our time.",
+            "Genres":["Fiction","Historical", "War"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Fiction/TheLightingThief.jpg",
+            "Title": "The Lighting Thief",
+            "Author": "Rick Riordan",
+            "Synopsis": "Percy Jackson is a good kid, but he can't seem to focus on his schoolwork or control his temper. And lately, being away at boarding school is only getting worse - Percy could have sworn his pre-algebra teacher turned into a monster and tried to kill him. When Percy's mom finds out, she knows it's time that he knew the truth about where he came from, and that he go to the one place he'll be safe. She sends Percy to Camp Half Blood, a summer camp for demigods (on Long Island), where he learns that the father he never knew is Poseidon, God of the Sea. Soon a mystery unfolds and together with his friends—one a satyr and the other the demigod daughter of Athena - Percy sets out on a quest across the United States to reach the gates of the Underworld (located in a recording studio in Hollywood) and prevent a catastrophic war between the gods.",
+            "Genres":["Fantasy","Fiction", "Advanture", "Children"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Fiction/HarryPotterandtheOrderofthePhoenix.jpg",
+            "Title": "J.K. Rowling",
+            "Author": "Rick Riordan",
+            "Synopsis": "Harry Potter is about to start his fifth year at Hogwarts School of Witchcraft and Wizardry. Unlike most schoolboys, Harry never enjoys his summer holidays, but this summer is even worse than usual. The Dursleys, of course, are making his life a misery, but even his best friends, Ron and Hermione, seem to be neglecting him. Harry has had enough. He is beginning to think he must do something, anything, to change his situation, when the summer holidays come to an end in a very dramatic fashion. What Harry is about to discover in his new year at Hogwarts will turn his world upside down...",
+            "Genres":["Magic","Fiction", "Advanture"],
+            "Price" : "RM 20.00"
+        }
+    ],
+
+    "Romance":
+    [
+        {
+            "Img":"img/Love/BeautifulDisaster.jpg",
+            "Title": "Beautiful Disaster",
+            "Author": "Jamie McGuire ",
+            "Synopsis": "The new Abby Abernathy is a good girl. She doesn’t drink or swear, and she has the appropriate number of cardigans in her wardrobe. Abby believes she has enough distance from the darkness of her past, but when she arrives at college with her best friend, her path to a new beginning is quickly challenged by Eastern University's Walking One-Night Stand.",
+            "Genres":["Romance","Yong Adult", "College"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Love/FiftyShadesofGrey.jpeg",
+            "Title": "Fifty Shades of Grey",
+            "Author": "E.L. James ",
+            "Synopsis": "When literature student Anastasia Steele goes to interview young entrepreneur Christian Grey, she encounters a man who is beautiful, brilliant, and intimidating. The unworldly, innocent Ana is startled to realize she wants this man and, despite his enigmatic reserve, finds she is desperate to get close to him. Unable to resist Ana’s quiet beauty, wit, and independent spirit, Grey admits he wants her, too—but on his own terms. Shocked yet thrilled by Grey’s singular erotic tastes, Ana hesitates. For all the trappings of success—his multinational businesses, his vast wealth, his loving family—Grey is a man tormented by demons and consumed by the need to control. When the couple embarks on a daring, passionately physical affair, Ana discovers Christian Grey’s secrets and explores her own dark desires. Erotic, amusing, and deeply moving, the Fifty Shades Trilogy is a tale that will obsess you, possess you, and stay with you forever.",
+            "Genres":["Romance"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Love/Thoughtless.jpeg",
+            "Title": "Thougless",
+            "Author": "S.C. Stephens ",
+            "Synopsis": "For almost two years now, Kiera's boyfriend, Denny, has been everything she's ever wanted: loving, tender and endlessly devoted to her. When they head off to a new city to start their lives together, Denny at his dream job and Kiera at a top-notch university, everything seems perfect. Then an unforeseen obligation forces the happy couple apart. Feeling lonely, confused, and in need of comfort, Kiera turns to an unexpected source—a local rock star named Kellan Kyle. At first, he's purely a friend that she can lean on, but as her loneliness grows, so does their relationship. And then one night everything changes... and none of them will ever be the same.",
+            "Genres":["Romance","College", "Music"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Love/Easy.jpeg",
+            "Title": "Easy",
+            "Author": "Tammara Webber",
+            "Synopsis": "He watched her, but never knew her. Until thanks to a chance encounter, he became her savior... The attraction between them was undeniable. Yet the past he'd worked so hard to overcome, and the future she'd put so much faith in, threatened to tear them apart. Only together could they fight the pain and guilt, face the truth - and find the unexpected power of  love. A groundbreaking novel in the New Adult genre, Easy faces one girl's struggle to regain the trust she's lost, find the inner strength to fight back against an attacker, and accept the peace she finds in the arms of a secretive boy.",
+            "Genres":["Romance"," Yong Adult", "College"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Love/BaredtoYou.jpg",
+            "Title": "Bared to You",
+            "Author": "Sylvia Day",
+            "Synopsis": "Gideon Cross came into my life like lightning in the darkness. He was beautiful and brilliant, jagged and white-hot. I was drawn to him as I'd never been to anything or anyone in my life. I craved his touch like a drug, even knowing it would weaken me. I was flawed and damaged, and he opened those cracks in me so easily. Gideon knew. He had demons of his own. And we would become the mirrors that reflected each other's most private wounds and desires. The bonds of his love transformed me, even as I prayed that the torment of our pasts didn't tear us apart",
+            "Genres":["Romance","Adult"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Love/Slammed.jpg",
+            "Title": "Slammed",
+            "Author": "Colleen Hoover",
+            "Synopsis": "Following the unexpected death of her father, 18-year-old Layken is forced to be the rock for both her mother and younger brother. Outwardly, she appears resilient and tenacious, but inwardly, she's losing hope. Enter Will Cooper: The attractive, 21-year-old new neighbor with an intriguing passion for slam poetry and a unique sense of humor. Within days of their introduction, Will and Layken form an intense emotional connection, leaving Layken with a renewed sense of hope. Not long after an intense, heart-stopping first date, they are slammed to the core when a shocking revelation forces their new relationship to a sudden halt. Daily interactions become impossibly painful as they struggle to find a balance between the feelings that pull them together, and the secret that keeps them apart.",
+            "Genres":["Romance","High School"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Love/Obsidian.jpeg",
+            "Title": "Obsidian",
+            "Author": "Jennifer L. Armentrout",
+            "Synopsis": "When we moved to West Virginia right before my senior year, I’d pretty much resigned myself to thick accents, dodgy internet access, and a whole lot of boring… until I spotted my hot neighbor, with his looming height and eerie green eyes. Things were looking up. And then he opened his mouth. Daemon is infuriating. Arrogant. Stab-worthy. We do not get along. At all. But when a stranger attacks me and Daemon literally freezes time with a wave of his hand, well, something… unexpected happens. The hot alien living next door marks me. You heard me. Alien. Turns out Daemon and his sister have a galaxy of enemies wanting to steal their abilities, and Daemon’s touch has me lit up like the Vegas Strip. The only way I’m getting out of this alive is by sticking close to Daemon until my alien mojo fades. If I don’t kill him first, that is.",
+            "Genres":["Romance","Fantasy", "Aliens"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Love/PerfactChemistry.jpg",
+            "Title": "Perfact Chemistry",
+            "Author": "Simone Elkeles ",
+            "Synopsis": "Brittany Ellis, the well-protected beauty queen and undisputed No. 1 at the school, would have preferred anyone else as a chemistry partner than Alex Fuentes, the admittedly attractive leader of a gang. And Alex also knows: there can hardly be a more explosive mixture than him and the rich “Miss Perfecta”. Nevertheless, he bets with his friends: within 14 days he will succeed in seducing the beautiful Brittany. What no one expected: that the dangerous game would soon become dangerously serious, because Brittany and Alex fall head and shoulders in love with each other. But the gang Alex belongs to can't allow that...",
+            "Genres":["Romance","Young Adult", "High School"],
+            "Price" : "RM 20.00"
+        },
+        {
+            "Img":"img/Love/OnDublinStreet.jpg",
+            "Title": "On Dublin Street ",
+            "Author": "Samantha Young",
+            "Synopsis": "Jocelyn Butler has been hiding from her past for years. But all her secrets are about to be laid bare ... Four years ago, Jocelyn left her tragic past behind in the States and started over in Scotland, burying her grief, ignoring her demons, and forging ahead without attachments. Her solitary life is working well - until she moves into a new apartment on Dublin Street, where she meets a man who shakes her carefully guarded world to its core. Braden Carmichael is used to getting what he wants, and he's determined to get Jocelyn into his bed. Knowing how skittish she is about entering a relationship; Braden proposes an arrangement that will satisfy their intense attraction without any strings attached. But after an intrigued Jocelyn accepts, she realizes that Braden won't be satisfied with just mind-blowing passion. The stubborn Scotsman is intent on truly knowing her . . . down to the very soul.",
+            "Genres":["Romance","Love"],
+            "Price" : "RM 20.00"
+        }
+    ]
+}
+
