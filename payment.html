@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
+     <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
         <a class="a2a_button_facebook"></a>
         <a class="a2a_button_twitter"></a>
         <a class="a2a_button_pinterest"></a>
@@ -29,11 +29,16 @@
     <script async src="https://static.addtoany.com/menu/page.js"></script>
     <main class="container mt-5">
         <div class="container mt-5">
-            <h1>Checkout</h1>
-            <div id="cart-items-container">
-                <!-- Display cart items here -->
+            <h1 class="text-center">Checkout</h1>
+            <div id="cart-items-container" class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    Your Cart
+                </div>
+                <div class="card-body">
+                    <!-- Display cart items here -->
+                </div>
             </div>
-            <p>Total Price: <span id="total-price">RM0.00</span></p>
+            <p class="text-center">Total Price: <span id="total-price">RM0.00</span></p>
 
             <!-- Payment Options -->
             <h3>Select Payment Method:</h3>
@@ -53,31 +58,45 @@
 
             <!-- Credit Card Form (Initially hidden) -->
             <div id="creditCardForm" style="display: none;">
-                <h3>Enter Credit Card Information:</h3>
-                <form>
-                    <div class="mb-3">
-                        <label for="cardNumber" class="form-label">Card Number</label>
-                        <input type="text" class="form-control" id="cardNumber">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        Enter Credit Card Information
                     </div>
-                    <div class="mb-3">
-                        <label for="expirationDate" class="form-label">Expiration Date</label>
-                        <input type="text" class="form-control" id="expirationDate">
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="cardNumber" class="form-label">Card Number</label>
+                                <input type="text" class="form-control" id="cardNumber">
+                            </div>
+                            <div class="mb-3">
+                                <label for="expirationDate" class="form-label">Expiration Date</label>
+                                <input type="text" class="form-control" id="expirationDate">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cvv" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="cvv">
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="processCreditCardPayment()">Pay</button>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="cvv" class="form-label">CVV</label>
-                        <input type="text" class="form-control" id="cvv">
-                    </div>
-                    <button type="button" class="btn btn-primary" onclick="processCreditCardPayment()">Pay</button>
-                </form>
+                </div>
             </div>
 
             <!-- Touch 'n Go Payment (Initially hidden) -->
             <div id="touchNGoPayment" style="display: none;">
-                <h3>Touch 'n Go Payment (Scan or Pay-direct)</h3>
-                <p><img id="qrcode" alt="QR Code" src="img/qr.jpeg" width="30%"></p>
-                <p><button type="button" class="btn btn-primary" id="payment-success-button">Pay</button></p>
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        Touch 'n Go Payment (Scan or Pay-direct)
+                    </div>
+                    <div class="card-body">
+                        <p class="text-center"><img id="qrcode" alt="QR Code" src="img/qr.jpeg" width="70%"></p>
+                        <p class="text-center"><button type="button" class="btn btn-primary" id="payment-success-button">Pay</button></p>
+                    </div>
+                </div>
             </div>
-            <button class="btn btn-primary mt-3" onclick="goToCartPage()">Back to Cart</button>
+            <div class="text-center">
+                <button class="btn btn-primary mt-3" onclick="goToCartPage()">Back to Cart</button>
+            </div>
         </div>
     </main>
 
