@@ -258,6 +258,20 @@ function updateNavigation() {
     }
 }
 
+// Logout functionality
+document.addEventListener('DOMContentLoaded', function () {
+    const logoutLink = document.getElementById('logout-link');
+
+    logoutLink.addEventListener('click', () => {
+        // Remove the user's email from local storage
+        localStorage.removeItem('userEmail');
+        // Redirect the user to the login page (you can replace 'signin.html' with your login page)
+        window.location.href = 'signin.html';
+    });
+
+    updateNavigation();
+});
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
