@@ -121,8 +121,41 @@
             // Call the updateNavigation function to initialize the navigation
             updateNavigation();
         });
-    </script>
 
+            $(function(){
+        var aPI = "bookList.json";
+        var title = localStorage.getItem("Title");
+        $(".bookTitle").text(title);
+        $.getJSON(aPI)
+                .done(function (data) {
+                    let category_name = [];
+                    //get category names in json file
+                    for (key in data) {
+                        category_name.push(key);
+                    }
+                    //get the book info
+                    const CATEGORY_NUM = 2;
+                    for(var j=0; j < CATEGORY_NUM; j++){
+                        for(var i = 0; i < data[category_name[j]].length; i++){
+                        if (title === data[category_name[j]][i]["Title"]){
+                            var book = data[category_name[j]][i];
+                            $("img[alt='Book Cover']").attr("src", book["Img"]);
+                            $(".bookAuthor").text(book["Author"]);
+                            $(".bookSynopsis").text(book["Synopsis"]);
+                            for(var k = 0; k < book["Genres"].length; k++){
+                                $(".bookGenres").append(book["Genres"][k] + " ");
+                            }
+                            $(".bookFee").append((parseFloat(book["Price"]) - 5.00).toFixed(2));
+                            $(".bookTotalFee").append(book["Price"]);
+                        }
+                    }
+                    }
+
+                });
+
+    });
+    </script>
+        
 
 
 </body>
