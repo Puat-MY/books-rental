@@ -254,6 +254,7 @@ function updateNavigation() {
     const logoutNav = document.getElementById('logout-nav');
     const cartBtn = document.getElementById("cart-nav");
     const userEmail = localStorage.getItem('userEmail');
+    if(!signinNav || !rentedBooksNav || !logoutNav || !cartBtn || !userEmail) return;
 
     if (userEmail) {
         // Replace "Sign In" with the user's email and show "Logout" link
@@ -273,7 +274,7 @@ function updateNavigation() {
 // Setup logout functionality when user clicks "Logout" in header bar
 document.addEventListener('DOMContentLoaded', function () {
     const logoutLink = document.getElementById('logout-link');
-
+    if(!logoutLink) return;
     logoutLink.addEventListener('click', () => {
         // Remove the user's email from local storage
         localStorage.clear();
