@@ -263,9 +263,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const logoutLink = document.getElementById('logout-link');
 
     logoutLink.addEventListener('click', () => {
-        // Remove the user's email from local storage
-        sessionStorage.removeItem('userEmail');
-        sessionStorage.removeItem('password')
+        // Remove the user's email from session storage
+       sessionStorage.removeItem('userEmail');
+       sessionStorage.removeItem('password');
+
+       // Delete the cookies by setting their expiration date to a past date
+       const pastDate = new Date(0).toUTCString(); // Set to a date in the past
+
+       // Delete the userEmail and password cookies
+       document.cookie = `userEmail=; expires=${pastDate}; path=/`;
+       document.cookie = `password=; expires=${pastDate}; path=/`;
         // Redirect the user to the login page (you can replace 'signin.html' with your login page)
         window.location.href = 'signin.html';
     });
