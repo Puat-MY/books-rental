@@ -24,8 +24,8 @@
       <a class="a2a_button_pinterest"></a>
       <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
   </div>
-  
   <script async src="https://static.addtoany.com/menu/page.js"></script>
+    
   <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <!-- Hypertext at top left, clicking it will [if at index.html] refresh the page or [if at other] go back to index.html -->
@@ -106,7 +106,22 @@
           </div>
       </div>
   </footer>
-   
+    <script>
+        // Logout functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutLink = document.getElementById('logout-link');
+
+            logoutLink.addEventListener('click', () => {
+                // Remove the user's email from local storage
+                localStorage.removeItem('userEmail');
+                // Redirect the user to the login page (you can replace 'signin.html' with your login page)
+                window.location.href = 'signin.html';
+            });
+
+            // Call the updateNavigation function to initialize the navigation
+            updateNavigation();
+        });
+    </script>
 
 
 
