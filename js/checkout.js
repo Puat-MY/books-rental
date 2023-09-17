@@ -30,7 +30,7 @@ function cartToRented() {
     else rentedBooks = [];
 
     cart.forEach(item => {
-        rentedBooks.push(JSON.stringify(item));
+        rentedBooks.push(item);
     });
 
     localStorage.setItem("rentedBooks", JSON.stringify(rentedBooks));

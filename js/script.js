@@ -168,6 +168,8 @@ function createTable(header, array) {
 
     // Sort array in ascending order of title
     array.sort((a, b) => {
+        a = JSON.parse(a);
+        b = JSON.parse(b);
         if(a.title.toLowerCase() > b.title.toLowerCase()) return 1;
         else if (a.title.toLowerCase() == b.title.toLowerCase()) return 0;
         else return -1;
