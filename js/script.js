@@ -240,7 +240,7 @@ function updateNavigation() {
     const rentedBooksNav = document.getElementById('rented-books-nav'); 
     const logoutNav = document.getElementById('logout-nav');
     const cartBtn = document.getElementById("cart-nav");
-    const userEmail = localStorage.getItem('userEmail');
+    const userEmail = sessionStorage.getItem('userEmail');
     if(!signinNav || !rentedBooksNav || !logoutNav || !cartBtn || !userEmail) return;
 
     if (userEmail) {
