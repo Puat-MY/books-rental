@@ -264,7 +264,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     logoutLink.addEventListener('click', () => {
         // Remove the user's email from local storage
-        localStorage.removeItem('userEmail');
+        sessionStorage.removeItem('userEmail');
+        sessionStorage.removeItem('password')
         // Redirect the user to the login page (you can replace 'signin.html' with your login page)
         window.location.href = 'signin.html';
     });
