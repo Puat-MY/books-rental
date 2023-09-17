@@ -164,9 +164,19 @@
             if (user) {
                 // Set the loggedIn variable to true (you would use a proper authentication mechanism in a real app)
                 loggedIn = true;
-                // Store the user's email in local storage
                 sessionStorage.setItem('userEmail', email);
                 sessionStorage.setItem('password', password);
+                // Calculate the expiration date for 1 month from now
+                const expirationDate = new Date();
+                expirationDate.setMonth(expirationDate.getMonth() + 1);
+
+                // Convert the expiration date to a string in UTC format
+                const expires = expirationDate.toUTCString();
+
+                // Store the user's email and password in cookies with a 1-month expiration
+                document.cookie = `userEmail=${email}; expires=${expires}; path=/`;
+                document.cookie = `password=${password}; expires=${expires}; path=/`;
+
                 // Redirect to the main page or perform other actions upon successful login
                 window.location.href = 'index.html';
             } else {
