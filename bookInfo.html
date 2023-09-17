@@ -58,11 +58,16 @@
                   <li class="nav-item" >
                       <a class="nav-link" href="contact.html">Contact Us</a>
                   </li>
-                  <li class="nav-item" id="cart-nav" style="display: none;">
-                      <a class="nav-link" href="cart.html">Shopping Cart</a>
-                  </li>
                   <li class="nav-item" id="signin-nav">
-                      <a class="nav-link" href="signin.html"> Sign In</a>
+                    <a class="nav-link" href="signin.html"> Sign In</a>
+                  </li>
+                  <li class="nav-item" id="cart-nav" style="display: none;">
+                    <a class="nav-link" href="cart.html">
+                        <i class="fas fa-shopping-cart"></i> <!-- Font Awesome shopping cart icon -->
+                    </a>
+                  </li>
+                  <li class="nav-item" id="logout-nav" style="display: none;">
+                    <a class="nav-link" href="#" id="logout-link">Logout</a>
                   </li>
               </ul>
           </div>
@@ -106,6 +111,7 @@
           </div>
       </div>
   </footer>
+  <script src="js/script.js"></script>
     <script>
         // Logout functionality
         document.addEventListener('DOMContentLoaded', function () {
