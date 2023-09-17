@@ -25,14 +25,16 @@ function displayCartItems() {
 
 // Function for reading cart array into rentedBooks array
 function cartToRented() {
-    var rentedBooks = localStorage.getItem('rentedBooks');
-    if(!rentedBooks) rentedBooks = [];
-    
+    var rentedBooks = localStorage.getItem("rentedBooks");
+    if(rentedBooks) rentedBooks = JSON.parse(rentedBooks);
+    else rentedBooks = [];
+
     cart.forEach(item => {
         rentedBooks.push(JSON.stringify(item));
     });
-    localStorage.setItem("rentedBooks", rentedBooks);
-    localStorage.removeItem('cart');
+
+    localStorage.setItem("rentedBooks", JSON.stringify(rentedBooks));
+    localStorage.removeItem("cart");
 }
 
 // Function to handle payment using credit card
