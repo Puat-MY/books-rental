@@ -90,8 +90,8 @@
                     <h5 class="card-title">Beautiful Disaster</h5>
                     <p class="card-text">Jamie McGuire</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -103,8 +103,8 @@
                     <h5 class="card-title">Fifty Shades of Grey</h5>
                     <p class="card-text">EL James</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -116,8 +116,8 @@
                     <h5 class="card-title">Thoughtless</h5>
                     <p class="card-text">S.C. Stephens</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -129,8 +129,8 @@
                     <h5 class="card-title">Easy</h5>
                     <p class="card-text">Tammara Webber</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -142,8 +142,8 @@
                     <h5 class="card-title">Bared to You</h5>
                     <p class="card-text">Sylvia Day</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -155,8 +155,8 @@
                     <h5 class="card-title">Slammed</h5>
                     <p class="card-text">Colleen Hoover</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -168,8 +168,8 @@
                     <h5 class="card-title">Obsidian</h5>
                     <p class="card-text">Jeniffer L. Armentrout</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -181,8 +181,8 @@
                     <h5 class="card-title">Perfect Chemistry</h5>
                     <p class="card-text">Simone Elkeles</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -194,8 +194,8 @@
                     <h5 class="card-title">On Dublin Street</h5>
                     <p class="card-text">Samantha Young</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -238,6 +238,15 @@
             // Call the updateNavigation function to initialize the navigation
             updateNavigation();
         });
+        $(function(){
+            $(".seedetails_bt").on("click", seeCDetailsFunction);
+
+            function seeCDetailsFunction() {
+                var title = $(this).closest(":has(.card-title)").find(".card-title").text();
+                localStorage.setItem("Title", title);
+                window.location.href = 'bookInfo.html';
+            }
+    });
 </script>
 
 </html>

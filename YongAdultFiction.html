@@ -88,11 +88,11 @@
             <div class="card">
                 <img src="img/Fiction/TheHungerGames.jpeg" class="card-img-top book-height" alt="Book 1">
                 <div class="card-body">
-                    <h5 class="card-title">the Hunger Games</h5>
+                    <h5 class="card-title">The Hunger Games</h5>
                     <p class="card-text">Suzanne Collins</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -104,8 +104,8 @@
                     <h5 class="card-title">Twillight</h5>
                     <p class="card-text">Stephenie Meyer</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                     <p class="card-text">Suzanne Collins</p>
                     <div class="btn_main">
                         <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -130,8 +130,8 @@
                     <h5 class="card-title">City of Bones</h5>
                     <p class="card-text">Cassandra Clare</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -143,8 +143,8 @@
                     <h5 class="card-title">Harry Potter and the Sorcerer's Stone</h5>
                     <p class="card-text">J.K. Rowling</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -156,8 +156,8 @@
                     <h5 class="card-title">Uglies</h5>
                     <p class="card-text">Scott Westerfeld</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -169,8 +169,8 @@
                     <h5 class="card-title">The Lightning Thief</h5>
                     <p class="card-text">Rick Riordan</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -182,8 +182,8 @@
                     <h5 class="card-title">The Book Thief</h5>
                     <p class="card-text">Markus Zusak</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -195,8 +195,8 @@
                     <h5 class="card-title">Harry Potter and the Order of the Phoenix</h5>
                     <p class="card-text">J. K. Rowling</p>
                     <div class="btn_main">
-                        <div class="rent_bt"><a href="#">Rent Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+                        <div class="rent_bt"><a href="browse.html">Rent Now</a></div>
+                        <div class="seedetails_bt"><a href="#">Details</a></div>
                     </div>
                 </div>
             </div>
@@ -240,6 +240,15 @@
             // Call the updateNavigation function to initialize the navigation
             updateNavigation();
         });
+    $(function(){
+            $(".seedetails_bt").on("click", seeCDetailsFunction);
+
+            function seeCDetailsFunction() {
+                var title = $(this).closest(":has(.card-title)").find(".card-title").text();
+                localStorage.setItem("Title", title);
+                window.location.href = 'bookInfo.html';
+            }
+    });
 </script>
 
 </html>
