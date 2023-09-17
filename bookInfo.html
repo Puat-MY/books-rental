@@ -76,7 +76,7 @@
          <p class="bookAuthor"> by Author Name</p>
          <p class="bookSynopsis">In the ruins of a place once known as North America lies the nation of Panem, a shining Capitol surrounded by twelve outlying districts. The Capitol is harsh and cruel and keeps the districts in line by forcing them all to send one boy and one girl between the ages of twelve and eighteen to participate in the annual Hunger Games, a fight to the death on live TV.</p>
          <br>
-         <p class="bookGenres"> Genres: Fiction, Advanture, Fantasy </p>
+         <p class="bookGenres"> Genres:  </p>
          <br>
          <p class="bookFee"> Rental RM5.00 + Deposit RM15.00 </p> 
          <p class="bookTotalFee"> RM 20.00 </p>
@@ -145,8 +145,8 @@
                             for(var k = 0; k < book["Genres"].length; k++){
                                 $(".bookGenres").append(book["Genres"][k] + " ");
                             }
-                            $(".bookFee").append((parseFloat(book["Price"]) - 5.00).toFixed(2));
-                            $(".bookTotalFee").append(book["Price"]);
+                            //$(".bookFee").append((parseFloat(book["Price"]) - 5.00).toFixed(2));
+                            //$(".bookTotalFee").append(book["Price"]);
                         }
                     }
                     }
